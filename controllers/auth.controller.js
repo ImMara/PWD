@@ -1,8 +1,6 @@
 const passport = require('passport')
 
-exports.loginForm = ( req , res , next ) => {
-    res.render('auth/auth-form',{ errors: null , isAuthenticated: req.isAuthenticated(), currentUser: req.user })
-}
+
 exports.login = ( req , res , next ) => {
     passport.authenticate('local', (err , user , info) =>{
         if(err){
@@ -12,7 +10,7 @@ exports.login = ( req , res , next ) => {
         }else{
             req.login(user,(err)=>{
                 if(err){ next(err) }else{
-                    res.redirect('/admin/')
+                    res.redirect('/admin')
                 }
             } )
         }
@@ -21,5 +19,5 @@ exports.login = ( req , res , next ) => {
 
 exports.logout = ( req , res , next ) =>{
     req.logout();
-    res.redirect('home');
+    res.redirect('/');
 }
