@@ -1,9 +1,10 @@
 .menu{
   width:100%;
+  font-weight: bold;
   height: 75px;
   border-bottom: 1px solid $gray-light-3;
   ul{
-    width: 100%;
+    max-width: 1280px;
     height: 100%;
     display:flex;
     justify-content: center;

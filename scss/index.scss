@@ -1,15 +1,28 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 @import './_partials/_colors';
 @import './_partials/_layout';
 @import './_partials/_forms';
 @import './_partials/_buttons';
 
-// layers
+// fonts
 
-@import './includes/menu';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
 body,html{
+  width: 100%;
+  height:100vh;
+  font-family: 'Roboto', sans-serif;
   background-color: $gray-dark-6;
   color:$gray-light-3;
+}
+body{
+  display: flex;
+  flex-direction: column;
 }
 .wrapper{
   margin-right:auto;
@@ -18,10 +31,47 @@ body,html{
   padding-right: 10px;
   padding-left: 10px;
 }
+.content{
+    flex: 1 0 auto;
+}
 li{
   list-style: none;
 }
 a{
   text-decoration: none;
-  color:$red-light;
+  color:$gray-light-3;
 }
+.home{
+  width: 100%;
+  height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 500px;
+    height: 600px;
+    h1{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      button{
+        margin-top: 5px;
+      }
+    }
+  }
+}
+// includes
+
+@import './includes/menu';
+@import './includes/footer';
+
+// views
+
+@import './admin/index';
