@@ -1,4 +1,1 @@
-extends layout
-
-block content
-    h1 HOME
+extends layoutblock content    h1 HOME    form(method='post' action="/admin/login")        input(type="email" name="email")        input(type="password" name="password")        if errors            ul                each error in errors                    li=error        button submit
