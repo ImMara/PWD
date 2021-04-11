@@ -5,7 +5,12 @@ const auth= require('./auth.routes');
 
 router.use('/admin',auth);
 
-router.get('/', ((req, res) => res.render('home')))
-router.get('/admin',ensureAuthenticated,(((req, res) => res.render('admin/index',))))
+router.get('/', ((req, res) =>{
+    if(req.user){
+        res.redirect("/admin");
+    }
+    res.render('home')
+} ))
+
 
 module.exports = router;

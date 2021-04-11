@@ -2,6 +2,6 @@ exports.ensureAuthenticated = ( req , res , next ) => {
     if (req.isAuthenticated()){
         next()
     }else{
-        res.redirect('/');
+        res.redirect('/admin');
     }
 }

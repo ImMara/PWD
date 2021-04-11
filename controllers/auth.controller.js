@@ -10,6 +10,8 @@ exports.login = ( req , res , next ) => {
         }else{
             req.login(user,(err)=>{
                 if(err){ next(err) }else{
+                    console.log(user)
+                    console.log(req.user)
                     res.redirect('/admin')
                 }
             } )
