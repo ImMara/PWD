@@ -1,0 +1,28 @@
+.menu{
+  width:100%;
+  height: 75px;
+  border-bottom: 1px solid $gray-light-3;
+  ul{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    li{
+      padding-left: 10px;
+      padding-right: 10px;
+      a{
+        text-transform: uppercase;
+      }
+    }
+    li:first-child{
+      margin-right: auto;
+      a {
+        img{
+          width: auto;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

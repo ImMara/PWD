@@ -1,0 +1,27 @@
+@import './_partials/_colors';
+@import './_partials/_layout';
+@import './_partials/_forms';
+@import './_partials/_buttons';
+
+// layers
+
+@import './includes/menu';
+
+body,html{
+  background-color: $gray-dark-6;
+  color:$gray-light-3;
+}
+.wrapper{
+  margin-right:auto;
+  margin-left: auto;
+  max-width: 1280px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:$red-light;
+}

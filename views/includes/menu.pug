@@ -1,0 +1,19 @@
+nav(class="menu")
+    ul(class="wrapper")
+        li
+            a
+                img(src="https://previews.123rf.com/images/deniaz/deniaz2001/deniaz200100234/138923282-a-logo-design-about-fake-news-fake-news-logo-fake-news-tag-vector-illustration.jpg")
+
+        if currentUser
+            li
+                a Home
+            li
+                a Content
+            li
+                a Users
+            li
+                a Events
+            li
+                a Configuration
+            li
+                a(class="btn" href="/admin/logout") logout

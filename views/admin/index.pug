@@ -1,5 +1,5 @@
 extends ../layout
 block content
-    h1 welcome #{currentUser.username}
-    form(method="get" action="/admin/logout")
-        button logout
+    .wrapper
+        .user
+            h1 welcome #{currentUser.username}

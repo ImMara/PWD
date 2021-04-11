@@ -10,7 +10,7 @@ router.get('/', ((req, res) =>{
         res.redirect("/admin");
     }
     res.render('home')
-} ))
+}))
 
 
 module.exports = router;

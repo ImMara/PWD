@@ -1,0 +1,55 @@
+.btn {
+  padding: 5px;
+  border: 1px solid #a00808;
+}
+
+.menu {
+  width: 100%;
+  height: 75px;
+  border-bottom: 1px solid #c7c9d3;
+}
+.menu ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.menu ul li a {
+  text-transform: uppercase;
+}
+.menu ul li:first-child {
+  margin-right: auto;
+}
+.menu ul li:first-child a img {
+  width: auto;
+  height: 50px;
+}
+
+body, html {
+  background-color: #1e1f26;
+  color: #c7c9d3;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #f19994;
+}
+
+/*# sourceMappingURL=style.css.map */
