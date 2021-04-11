@@ -4,7 +4,7 @@ const MongoStore = require('connect-mongo');
 const { clientPromise } = require('../database');
 
 app.use(session({
-    secret: 'je suis un secret',
+    secret: '|o45D*CmZI^vd^B.QgUcBd&%k_MsJ8',
     resave: false,
     saveUninitialized: false,
     cookie: {
