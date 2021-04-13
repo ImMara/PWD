@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { ensureAuthenticated } = require('../config/guards.config');
-const auth= require('./auth.routes');
+const admin = require('./admin.routes');
 
 
-router.use('/admin',auth);
+router.use('/admin',admin);
 
 router.get('/', ((req, res) =>{
     if(req.user){

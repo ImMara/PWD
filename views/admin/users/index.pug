@@ -1,0 +1,22 @@
+extends ../../layout
+block content
+    div
+        div
+            h2 User pannel
+            div=users.length+" user"
+        hr
+        table
+            thead
+                tr
+                    th Username
+                    th Email
+                    th Role
+                    th Action
+            tbody
+                each user in users
+                    tr
+                        th=user.username
+                        th=user.local.email
+                        th=user.role
+                        th
+                            .btn delete

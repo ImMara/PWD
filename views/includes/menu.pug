@@ -5,15 +5,19 @@ nav(class="menu")
                 img(src="https://previews.123rf.com/images/deniaz/deniaz2001/deniaz200100234/138923282-a-logo-design-about-fake-news-fake-news-logo-fake-news-tag-vector-illustration.jpg")
 
         if currentUser
+
             li
-                a Home
+                a(href="/") Home
             li
-                a Content
+                 a Blog
             li
-                a Users
-            li
-                a Events
-            li
-                a Configuration
-            li
-                a(class="btn" href="/admin/logout") logout
+                a(href="/admin/events") Events
+
+            if currentUser.role === 'ROLE_ADMIN'
+
+                li
+                    a Content
+                li
+                   a(href="/admin/users") Users
+                li
+                    a(class="btn" href="/admin/logout") logout

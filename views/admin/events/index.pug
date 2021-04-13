@@ -1,0 +1,12 @@
+extends ../../layout
+block content
+    h1 events layout
+    hr
+    each ev in events
+        div
+            div=ev.name
+            div=ev.date
+            div=ev.address
+            div=ev.planning.from
+            div=ev.planning.to
+        hr
