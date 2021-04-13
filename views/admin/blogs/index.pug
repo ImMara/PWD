@@ -1,0 +1,11 @@
+extends ../../layout
+block content
+    h1 blog layout
+    hr
+    div
+    each blog in blogs
+        div
+            h3=blog.author.username
+            p=blog.content
+            if blog.image
+                img(src="/images/"+blog.image style="height:150px")

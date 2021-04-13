@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const schema =  mongoose.Schema;
-
+const schema = mongoose.Schema;
 
 const eventSchema = schema({
     name:{type:String,required:true, unique:true},

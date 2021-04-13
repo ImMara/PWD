@@ -13,6 +13,7 @@ app.use(session({
     },
     store: new MongoStore({
         mongoUrl:'mongodb+srv://admin:WHNzzWyJHlmUEv9c@nogamenolife.eqdfq.mongodb.net/nogame?retryWrites=true&w=majority',
+        autoRemove:true,
         ttl: 60 * 60 * 24 * 14,
     }),
 }));
