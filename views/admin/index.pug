@@ -3,3 +3,12 @@ block content
     .user
         h1 welcome
             span  #{currentUser.username}
+        img(src="images/"+currentUser.image style="height:200px")
+        div
+        case currentUser.role
+            when "ROLE_ADMIN"
+                p one of the best of the bests . Hello , Admin!
+            when "ROLE_USER"
+                p someone needs to be validate . hello , user!
+            when "ROLE_SUPERADMIN"
+                p look like you got super power . Hello , super admin!

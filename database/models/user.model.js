@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 const userSchema = schema({
     username:{ type:String , required:true , unique : true },
+    image:{type:String, default:'defaultProfile.png'},
     local:{
         email:{ type:String,required: true , unique : true },
         password:{type:String , required: true },

@@ -7,7 +7,7 @@ const eventSchema = schema({
     date:{type:Date,required:true},
     address:{type:String},
     planning: {type:Object},
-    image:{type:String,default:''}
+    image:{type:String,default:'events.jpg'}
 });
 
 const Event = mongoose.model('event',eventSchema);

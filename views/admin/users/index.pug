@@ -9,6 +9,7 @@ block content
             thead
                 tr
                     th Username
+                    th image
                     th Email
                     th Role
                     th Action
@@ -16,6 +17,7 @@ block content
                 each user in users
                     tr
                         th=user.username
+                        th=user.image
                         th=user.local.email
                         th=user.role
                         th
