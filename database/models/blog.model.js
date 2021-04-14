@@ -7,7 +7,7 @@ const blogSchema = schema({
         minLength:[1 , 'message trop court'] ,
         required: [true , 'Champ requis']
     },
-    image:{type:String , default:"events.jpg"},
+    image:{type:String , default:"defaultBlog.jpg"},
     author:{type:schema.Types.ObjectId,ref:'user', required:true }
 })
 
