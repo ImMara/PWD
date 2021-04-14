@@ -1,11 +1,18 @@
 extends ../../layout
 block content
-    h1 blog layout
-    hr
-    div
-    each blog in blogs
-        div
-            h3=blog.author.username
-            p=blog.content
-            if blog.image
-                img(src="/images/"+blog.image style="height:150px")
+    .blog
+        .topbar
+            div
+                #{blogs.length} posts
+                .btn create
+        .blog-content
+                each blog in blogs
+                    .card
+                         img(src="/images/" + blog.image)
+                         p=blog.title
+                         p=blog.created
+                         h3=blog.author.username
+                         div
+                           .btn edit
+                           .btn delete
+

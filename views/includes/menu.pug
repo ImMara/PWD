@@ -7,20 +7,35 @@ nav(class="menu")
         if currentUser
 
             li
-                i(class="fa-duotone fa-home")
-                a(href="/") HOME
-
+                a(href="/")
+                 i(class="fa-duotone fa-home")
+                 .
+                    Home
             li
-                 a(href="/admin/blogs") Blog
+                 a(href="/admin/blogs")
+                  i(class="fa-duotone fa-newspaper")
+                  .
+                     Blog
             li
-                a(href="/admin/events") Events
+                a(href="/admin/events")
+                 i(class="fa-duotone fa-calendar-days")
+                 .
+                    Events
 
             if currentUser.role === 'ROLE_ADMIN'
 
                 li
-                    a(href="/admin/siteContents") Content
+                    a(href="/admin/siteContents")
+                     i(class="fa-duotone fa-browser")
+                     .
+                        Content
                 li
-                   i(class="fa-user fa-solid")
-                   a(href="/admin/users") Users
+                   a(href="/admin/users")
+                    i(class="fa-duotone fa-clipboard-user")
+                    .
+                       Users
                 li
-                    a(class="btn" href="/admin/logout") logout
+                    a(class="btn" href="/admin/logout")
+                     i(class="fa-duotone fa-right-from-bracket")
+                     .
+                      logout
