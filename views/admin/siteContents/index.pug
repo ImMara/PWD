@@ -1,0 +1,7 @@
+extends ../../layout
+block content
+    h1 content preview
+    hr
+    each c in site
+        label site title :
+        input(type="text" value=c.title name="title")
