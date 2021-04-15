@@ -4,15 +4,16 @@ block content
         .topbar
             div
                 #{blogs.length} posts
-                .btn create
+                .btn create new post
         .blog-content
                 each blog in blogs
                     .card
                          img(src="/images/" + blog.image)
                          p=blog.title
                          p=blog.created
-                         h3=blog.author.username
+                         h3="author : "+blog.author.username
                          div
-                           .btn edit
-                           .btn delete
+                            if blog.author._id = currentUser._id
+                                .btn edit
+                            .btn delete
 
