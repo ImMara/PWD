@@ -4,11 +4,12 @@
   box-sizing: border-box;
 }
 
+@import './_partials/_breakpoints';
 @import './_partials/_colors';
 @import './_partials/_layout';
 @import './_partials/_forms';
 @import './_partials/_buttons';
-@import './_partials/_breakpoints';
+@import './_partials/cards';
 
 // fonts
 

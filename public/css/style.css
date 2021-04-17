@@ -41,19 +41,86 @@ a {
 }
 
 .btn {
-  padding: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
   cursor: pointer;
-  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #c7c9d3;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  border: 1px solid #3d88c3;
+  color: #3d88c3;
+}
+
+.card {
+  position: relative;
+  width: 90%;
+  margin: 15px;
+  padding: 15px;
+  background-color: #f1f1f3;
+  border: 1px solid #c7c9d3;
+  border-radius: 5px;
+  padding-top: 150px;
+}
+.card:hover {
+  transition: 0.2s ease;
+  transform: translate(2px, -2px);
+  box-shadow: -5px 5px 12px 0px #C4C4C4;
+}
+@media (min-width: 768px) {
+  .card {
+    width: 350px;
+  }
+}
+.card img {
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+}
+.card h2 {
+  position: relative;
+  margin-top: 15px;
+  width: 100%;
+  margin-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card h4 {
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+}
+.card div {
+  margin-top: 15px;
+}
+.card div .btn {
+  margin-top: 5px;
+}
+.card div .btn:nth-child(2) {
+  background-color: #f1f1f3;
   border: 1px solid #a00808;
+  color: #a00808;
+}
+.card div .btn:nth-child(2):hover {
+  background-color: #a00808;
+  color: #f1f1f3;
 }
 
 .menu {
   width: 100%;
   font-weight: bold;
   height: 75px !important;
-  background-color: #3d88c3;
+  background-color: #0a0a0c;
   flex-shrink: 0;
-  box-shadow: 0px 9px 35px 0px rgba(0, 0, 0, 0.63);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.63);
 }
 .menu ul {
   max-width: 1280px;
@@ -67,14 +134,34 @@ a {
   padding-left: 10px;
   padding-right: 10px;
 }
-@media (min-width: 376px) {
+.menu ul li :hover {
+  transition: 0.5s ease;
+  color: #f1f1f3;
+  transform: translate(-1px, 1px);
+}
+@media (min-width: 768px) {
   .menu ul li {
     display: initial;
   }
 }
 .menu ul li a {
+  display: block;
+  height: 100%;
   text-transform: uppercase;
   color: #c7c9d3;
+}
+.menu ul li a svg {
+  margin-right: 5px;
+  margin-bottom: 1px;
+}
+.menu ul li .btn {
+  background-color: #f1f1f3;
+  border: 1px solid #a00808;
+  color: #a00808;
+}
+.menu ul li .btn:hover {
+  background-color: #a00808;
+  color: #f1f1f3;
 }
 .menu ul li:first-child {
   margin-right: auto;
@@ -84,12 +171,17 @@ a {
   width: auto;
   height: 50px;
 }
+.menu ul li:last-child {
+  display: initial;
+}
 
 .p-footer {
   flex-shrink: 0;
   height: 100px;
   width: 100%;
-  border-top: 1px solid #c7c9d3;
+  color: #f1f1f3;
+  margin-top: 15px;
+  background-color: #1e1f26;
 }
 
 .home {
@@ -143,54 +235,47 @@ a {
   width: 100%;
 }
 .blog .topbar {
-  height: 100px;
   width: 100% !important;
   border-bottom: 1px solid #c7c9d3;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
-.blog .topbar div .btn {
-  width: 200px;
+.blog .topbar h1 {
+  text-align: center;
+}
+.blog .topbar .flex {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.blog .topbar .flex hr {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.blog .topbar .flex .stats {
+  display: flex;
+  margin-left: auto;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #c7c9d3;
 }
 .blog .blog-content {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
   .blog .blog-content {
     flex-direction: row;
+    justify-content: space-around;
   }
-}
-.blog .blog-content .card {
-  margin: 15px;
-  padding: 15px;
-  border: 1px solid #c7c9d3;
-  box-shadow: 0px 0px 65px -39px rgba(0, 0, 0, 0.75);
-}
-@media (min-width: 768px) {
-  .blog .blog-content .card {
-    width: 350px;
-  }
-}
-.blog .blog-content .card img {
-  margin-bottom: 5px;
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  object-position: center;
-}
-.blog .blog-content .card p {
-  margin-bottom: 5px;
-}
-.blog .blog-content .card h3 {
-  margin-bottom: 5px;
-  color: #76daff;
-}
-.blog .blog-content .card div .btn {
-  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

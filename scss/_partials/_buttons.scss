@@ -1,6 +1,38 @@
 .btn{
-  padding: 5px;
+  display: flex;
+  justify-content: center;
+  padding:10px;
   cursor: pointer;
-  text-align: center;
+  border-radius: 5px;
+  border:1px solid $gray-light-3;
+  transition: 0.5s ease;
+  &:hover{
+    border: 1px solid $blue-dark;
+    color: $blue-dark;
+  }
+}
+@mixin btn-red{
+  background-color: $gray-light-6;
   border: 1px solid $red-dark;
+  color: $red-dark;
+    &:hover{
+      background-color: $red-dark;
+      color: $gray-light-6;
+    }
+}
+@mixin btn-green{
+  border:1px solid $green-dark;
+  background-color:$gray-light-6;
+  color:$green-dark;
+  :hover{
+    background-color: $green-dark;
+    color: $gray-light-6;
+  }
+}
+@mixin btn-hover-shadow{
+  &:hover{
+    transition: 0.5s ease;
+    transform: translate(2px,-2px);
+    box-shadow: -5px 5px 12px 0px #C4C4C4;
+  }
 }
