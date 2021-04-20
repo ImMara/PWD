@@ -40,6 +40,35 @@ a {
   flex: 1 0 auto;
 }
 
+form input, form textarea {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 7.5px 15px;
+  font-size: 16px;
+  color: #c7c9d3;
+  border-bottom: 1px solid #c7c9d3;
+  outline: none;
+}
+form textarea {
+  resize: none;
+}
+form label {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+form input:focus, form textarea:focus {
+  border-top: 0;
+  outline: 1px solid #c7c9d3;
+  -moz-outline-radius: 5px;
+  border-left: 0;
+  border-right: 0;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -104,6 +133,15 @@ a {
 .card div .btn {
   margin-top: 5px;
 }
+.card div .btn:nth-child(1) {
+  border: 1px solid #248c46;
+  background-color: #f1f1f3;
+  color: #248c46;
+}
+.card div .btn:nth-child(1):hover {
+  background-color: #248c46;
+  color: #f1f1f3;
+}
 .card div .btn:nth-child(2) {
   background-color: #f1f1f3;
   border: 1px solid #a00808;
@@ -137,7 +175,6 @@ a {
 .menu ul li :hover {
   transition: 0.5s ease;
   color: #f1f1f3;
-  transform: translate(-1px, 1px);
 }
 @media (min-width: 768px) {
   .menu ul li {
@@ -276,6 +313,49 @@ a {
     flex-direction: row;
     justify-content: space-around;
   }
+}
+.blog .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.9);
+  color: #f1f1f3;
+  top: 0;
+  left: 0;
+}
+.blog .overlay .overlay-content {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #1e1f26;
+}
+.blog .overlay .overlay-content .close {
+  position: absolute;
+  top: 11%;
+  left: 6%;
+  color: white;
+  cursor: pointer;
+}
+.blog .overlay .overlay-content .close :hover {
+  transition: all 0.2s ease-in-out;
+  color: #a00808;
+}
+
+.createPost {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+.createPost textarea {
+  height: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

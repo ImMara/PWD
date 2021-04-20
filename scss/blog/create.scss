@@ -1,0 +1,10 @@
+.createPost{
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  textarea{
+    height: 50%;
+  }
+}

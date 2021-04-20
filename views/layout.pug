@@ -6,9 +6,11 @@ html(lang="en")
         script(src="/javascripts/duotone.min.js")
         script(src="/javascripts/fontawesome.min.js")
         link(rel="stylesheet" href="/css/style.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js")
         title No Game No Life
     body
         include ./includes/menu
         div(class="wrapper content")
             block content
         include ./includes/footer
+        block script

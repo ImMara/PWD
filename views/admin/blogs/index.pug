@@ -17,4 +17,11 @@ block content
                             if blog.author._id = currentUser._id
                                 .btn edit
                             .btn delete
+        .overlay
+            .overlay-content
+                .close
+                    i(class="fa-duotone fa-2x fa-xmark")
+                include create
 
+    block script
+        script(src="/javascripts/blog.js")

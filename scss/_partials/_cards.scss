@@ -49,6 +49,9 @@
     margin-top: 15px;
     .btn {
       margin-top :5px;
+      &:nth-child(1){
+        @include btn-green;
+      }
       &:nth-child(2){
         @include btn-red;
       }

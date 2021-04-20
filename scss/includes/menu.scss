@@ -19,7 +19,6 @@
       :hover{
         transition:0.5s ease;
         color: $gray-light-6;
-        transform: translate(-1px,1px);
       }
       @media (min-width:$breakpoint-tablet){
         display: initial;

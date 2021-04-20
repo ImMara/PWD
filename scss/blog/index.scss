@@ -22,10 +22,10 @@
       }
       .stats{
         display: flex;
-      margin-left: auto;
-      border-radius: 5px;
-      padding: 10px;
-      border: 1px solid $gray-light-3;
+        margin-left: auto;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid $gray-light-3;
        }
     }
   }
@@ -41,4 +41,37 @@
       justify-content: space-around;
     }
     }
+  .overlay{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(211,211,211,0.9);
+    color: $gray-light-6;
+    top: 0;
+    left: 0;
+    .overlay-content{
+      width: 90%;
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background-color: $gray-dark-6;
+      .close{
+        position: absolute;
+        top: 11%;
+        left: 6%;
+        color: white;
+
+        cursor: pointer;
+        :hover{
+          transition: all 0.2s ease-in-out;
+          color:$red-dark;
+        }
+      }
+    }
+  }
   }

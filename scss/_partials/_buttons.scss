@@ -24,7 +24,7 @@
   border:1px solid $green-dark;
   background-color:$gray-light-6;
   color:$green-dark;
-  :hover{
+  &:hover{
     background-color: $green-dark;
     color: $gray-light-6;
   }
