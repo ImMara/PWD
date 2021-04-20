@@ -1,8 +1,8 @@
-form(class="createPost")
+form(class="createPost" method="post" action="/admin/blogs/"  )
     label title
     input(type="text" name="title")
     label image
     input(type="file" name="image")
     label content
     textarea(name="content")
-    button valider
+    button(class="btn") valider

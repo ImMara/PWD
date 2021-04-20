@@ -53,6 +53,15 @@ form input, form textarea {
   border-bottom: 1px solid #c7c9d3;
   outline: none;
 }
+form input[type=file] {
+  padding: 7.5px 0;
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  form input[type=file] {
+    font-size: 16px;
+  }
+}
 form textarea {
   resize: none;
 }
@@ -67,6 +76,10 @@ form input:focus, form textarea:focus {
   -moz-outline-radius: 5px;
   border-left: 0;
   border-right: 0;
+}
+form button {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .btn {
@@ -354,8 +367,18 @@ form input:focus, form textarea:focus {
   justify-content: center;
   height: 80%;
 }
+.createPost label {
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
+}
 .createPost textarea {
   height: 50%;
+}
+.createPost button {
+  margin-top: 15px;
+  width: 200px;
+  background: none;
+  color: #c7c9d3;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,17 @@
   flex-direction: column;
   justify-content: center;
   height: 80%;
+  label{
+    margin-bottom: 7.5px;
+    margin-top: 7.5px;
+  }
   textarea{
     height: 50%;
+  }
+  button{
+    margin-top: 15px;
+    width: 200px;
+    background: none;
+    color: $gray-light-3;
   }
 }
