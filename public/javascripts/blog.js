@@ -7,9 +7,8 @@ const bind = () => {
     const overlay = document.querySelector('.blog .overlay')
     const closeOverlay = document.querySelector('.blog .overlay .close')
     const deleteBtn = document.querySelectorAll('.card div .btn:nth-child(2)')
+    const editBtn = document.querySelectorAll('.card div .btn:first-child')
     const container = document.querySelector('body')
-
-    console.log(1, blogs )
 
     createBtn.onclick = () => {
         tween.play();
@@ -25,6 +24,13 @@ const bind = () => {
                     bind();
                 })
                 .catch(error => console.log(error));
+        }
+    })
+
+    editBtn.forEach(el =>{
+        el.onclick = ($event) => {
+            const blogID = $event.target.parentElement.parentElement.getAttribute('id')
+            window.location.replace(`/admin/blogs/${blogID}`)
         }
     })
 
