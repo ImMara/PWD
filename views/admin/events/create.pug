@@ -1,8 +1,10 @@
-form(class="events-form")
+form(class="events-form" method="post" enctype="multipart/form-data" action="/admin/events/")
     label name
         input(type="text" name="name")
     label address
         input(type="text" name="address")
+    label date
+        input(type="date" name="date")
     label image
         input(type="file" name="image")
     button(class="btn") valider

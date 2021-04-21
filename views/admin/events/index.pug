@@ -7,8 +7,8 @@ block content
             .message message
         hr
         each ev in events
-            .events-container
-                img(src="/images/events.jpg" style="height:150px")
+            .events-container(id=ev._id)
+                img(src="/images/events/" + ev.image style="width:250px;height:15Opx;")
                 .event
                     div="Event Name : "+ev.name
                     div="Date : "+ev.date

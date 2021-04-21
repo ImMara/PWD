@@ -1,8 +1,8 @@
 window.addEventListener('DOMContentLoaded',()=>{
-    bind()
+    init()
 })
 
-const bind = () => {
+const init = () => {
     const createBtn = document.querySelector('.topbar .flex .btn')
     const overlay = document.querySelector('.blog .overlay')
     const closeOverlay = document.querySelector('.blog .overlay .close')
@@ -21,7 +21,7 @@ const bind = () => {
             axios.delete('/admin/blogs/' + blogID)
                 .then(res => {
                     container.innerHTML = res.data;
-                    bind();
+                    init();
                 })
                 .catch(error => console.log(error));
         }

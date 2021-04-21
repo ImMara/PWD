@@ -8,11 +8,11 @@ exports.createBlog = (blog)=>{
     return newBlog.save();
 };
 exports.findBlogs = (blogID) =>{
-    return Blog.findById(blogID)
+    return Blog.findById(blogID);
 }
 exports.deleteBlog = (blogID) =>{
   return Blog.findByIdAndDelete(blogID).exec();
 };
 exports.updateBlog = (blogID,blog) => {
-    return Blog.findByIdAndUpdate(blogID,{$set :blog},{runValidators:true})
+    return Blog.findByIdAndUpdate(blogID,{$set :blog},{runValidators:true});
 }
