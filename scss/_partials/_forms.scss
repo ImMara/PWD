@@ -1,7 +1,7 @@
-form{
-  input,textarea{
+form {
+  input, textarea {
     border-top: 0;
-    border-left:0;
+    border-left: 0;
     border-right: 0;
     background: none;
     margin-top: 5px;
@@ -12,29 +12,34 @@ form{
     border-bottom: 1px solid $gray-light-3;
     outline: none;
   }
-  input[type=file]{
-    padding:7.5px 0;
+
+  input[type=file] {
+    padding: 7.5px 0;
     font-size: 10px;
-    @media (min-width: $breakpoint-tablet){
+    @media (min-width: $breakpoint-tablet) {
       font-size: 16px;
     }
   }
-  textarea{
-    resize:none;
+
+  textarea {
+    resize: none;
   }
-  label{
+
+  label {
     text-transform: uppercase;
-    font-weight:bold;
+    font-weight: bold;
     margin-bottom: 15px;
   }
-  input:focus , textarea:focus{
+
+  input:focus, textarea:focus {
     border-top: 0;
     outline: 1px solid $gray-light-3;
     -moz-outline-radius: 5px;
-    border-left:0;
+    border-left: 0;
     border-right: 0;
   }
-  button{
+
+  button {
     font-size: 16px;
     font-weight: bold;
   }

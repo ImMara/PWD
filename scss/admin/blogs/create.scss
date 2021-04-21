@@ -1,17 +1,20 @@
-.createPost{
+.createPost {
   display: flex;
   width: 80%;
   flex-direction: column;
   justify-content: center;
   height: 80%;
-  label{
+
+  label {
     margin-bottom: 7.5px;
     margin-top: 7.5px;
   }
-  textarea{
+
+  textarea {
     height: 50%;
   }
-  button{
+
+  button {
     margin-top: 15px;
     width: 200px;
     background: none;

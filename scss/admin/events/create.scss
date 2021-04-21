@@ -1,16 +1,19 @@
-.events-form{
+.events-form {
   display: flex;
   flex-direction: column;
   width: 80%;
-  label{
+
+  label {
     display: flex;
     flex-direction: column;
   }
-  .btn{
+
+  .btn {
     background: none;
     width: 300px;
     color: $gray-light-3;
-    &:hover{
+
+    &:hover {
       color: $blue-dark;
     }
   }

@@ -1,7 +1,7 @@
-@mixin card-hover{
-  &:hover{
+@mixin card-hover {
+  &:hover {
     transition: 0.2s ease;
-    transform: translate(2px,-2px);
+    transform: translate(2px, -2px);
     box-shadow: -5px 5px 12px 0px #C4C4C4;
   }
 }
@@ -32,6 +32,7 @@
     object-fit: cover;
     object-position: center;
   }
+
   h2 {
     position: relative;
     margin-top: 15px;
@@ -41,18 +42,23 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
   h4 {
     margin-bottom: 5px;
     text-overflow: ellipsis;
   }
+
   div {
     margin-top: 15px;
+
     .btn {
-      margin-top :5px;
-      &:nth-child(1){
+      margin-top: 5px;
+
+      &:nth-child(1) {
         @include btn-green;
       }
-      &:nth-child(2){
+
+      &:nth-child(2) {
         @include btn-red;
       }
     }

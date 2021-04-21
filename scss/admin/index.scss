@@ -1,20 +1,23 @@
-.user{
+.user {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-    h1{
-      text-align: center;
-      span{
-        color:$blue;
-      }
-    }
-    img{
-      margin-top: 50px;
-      width: 200px;
-      height: auto;
-      margin-bottom: 50px;
+
+  h1 {
+    text-align: center;
+
+    span {
+      color: $blue;
     }
   }
+
+  img {
+    margin-top: 50px;
+    width: 200px;
+    height: auto;
+    margin-bottom: 50px;
+  }
+}
 

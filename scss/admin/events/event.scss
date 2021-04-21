@@ -1,32 +1,39 @@
-.event-page{
+.event-page {
   width: 100%;
-  form{
+
+  form {
     margin-top: 15px;
     display: flex;
     width: 100%;
     flex-direction: column;
-    input[type="file"]{
+
+    input[type="file"] {
       display: none;
     }
-    label{
+
+    label {
       display: flex;
       flex-direction: column;
-      textarea{
+
+      textarea {
         height: 300px;
       }
     }
-    img{
+
+    img {
       height: 200px;
       margin-bottom: 15px;
       cursor: pointer;
       width: auto;
       object-fit: cover;
     }
-    .btn{
+
+    .btn {
       margin-top: 15px;
       width: 300px;
     }
-    p{
+
+    p {
       margin-top: 5px;
       margin-bottom: 5px;
     }
