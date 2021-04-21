@@ -5,12 +5,18 @@ block content
             h1 Blog pannel
             .flex
                 .btn create new post
+
                 .stats
                     div=blogs.length+" posts"
+                .message
+                    case message
+                        default
+                            p create , edit , delete everything
+                                strong  #{currentUser.username}
         .blog-content
                 each blog in blogs
                     .card(id=`${blog._id}`)
-                         img(src="/images/" + blog.image)
+                         img(src="/images/blogs/" + blog.image)
                          h2=blog.title
                          h4="author : "+blog.author.username
                          div

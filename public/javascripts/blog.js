@@ -9,7 +9,7 @@ const bind = () => {
     const deleteBtn = document.querySelectorAll('.card div .btn:nth-child(2)')
     const container = document.querySelector('body')
 
-    console.log(1, deleteBtn[0].parentElement.parentElement)
+    console.log(1, blogs )
 
     createBtn.onclick = () => {
         tween.play();
