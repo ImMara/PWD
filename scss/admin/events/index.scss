@@ -1,0 +1,66 @@
+.events-page{
+
+  .topbar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    .btn{
+      margin-top: 5px;
+      width: 200px;
+      height: 50px;
+    }
+    h1{
+      width: 100%;
+       margin-top: 15px;
+       margin-bottom: 15px;
+       text-align: center;
+     }
+    .message{
+      width: 70%;
+      margin-top: 5px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: 1px solid $gray-light-3;
+
+      @media (min-width: $breakpoint-tablet){
+        margin-left: auto;
+      }
+    }
+  }
+  hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .events-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    img{
+      @media (min-width: $breakpoint-tablet){
+        margin-right: auto;
+      }
+    }
+    .event{
+      div{
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      @media (min-width: $breakpoint-tablet){
+        margin-right: auto;
+      }
+    }
+    .action{
+      display: flex;
+      .btn{
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
