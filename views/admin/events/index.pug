@@ -8,7 +8,7 @@ block content
         hr
         each ev in events
             .events-container(id=ev._id)
-                img(src="/images/events/" + ev.image style="width:250px;height:15Opx;")
+                img(src="/images/events/resized/" + ev.image style="width:250px;height:15Opx;")
                 .event
                     div="Event Name : " + ev.name
                     div="Date : " + ev.date.toISOString().substr(0, 10)

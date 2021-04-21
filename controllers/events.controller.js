@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const sharp = require("sharp");
 const {updateEvent, deleteEvent, findEvents, createEvent, findAllEvents} = require("../queries/events.queries");
 
 exports.getEvents = async (req, res, next) => {
@@ -89,7 +90,7 @@ exports.updateEvents = async (req, res, next) => {
 
         const {filename: image} = req.file;
         await sharp(req.file.path)
-            .resize(800)
+            .resize(500)
             .webp({quality: 90})
             .toFile(path.resolve(req.file.destination, "resized", image))
         fs.unlinkSync(req.file.path);
