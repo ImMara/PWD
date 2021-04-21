@@ -42,18 +42,14 @@
     justify-content: center;
     align-items: center;
     img{
-      @media (min-width: $breakpoint-tablet){
         margin-right: auto;
-      }
     }
     .event{
       div{
         margin-top: 5px;
         margin-bottom: 5px;
       }
-      @media (min-width: $breakpoint-tablet){
         margin-right: auto;
-      }
     }
     .action{
       display: flex;

@@ -11,7 +11,7 @@ block content
                 img(src="/images/events/" + ev.image style="width:250px;height:15Opx;")
                 .event
                     div="Event Name : "+ev.name
-                    div="Date : "+ev.date
+                    div="Date : "+ev.date.toISOString().substr(0,10)
                     div="Address : "+ev.address
                 .action
                     .btn Edit

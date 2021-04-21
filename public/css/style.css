@@ -477,19 +477,15 @@ form button {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 768px) {
-  .events-page .events-container img {
-    margin-right: auto;
-  }
+.events-page .events-container img {
+  margin-right: auto;
+}
+.events-page .events-container .event {
+  margin-right: auto;
 }
 .events-page .events-container .event div {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-@media (min-width: 768px) {
-  .events-page .events-container .event {
-    margin-right: auto;
-  }
 }
 .events-page .events-container .action {
   display: flex;
@@ -547,6 +543,41 @@ form button {
 }
 .events-form .btn:hover {
   color: #3d88c3;
+}
+
+.event-page {
+  width: 100%;
+}
+.event-page form {
+  margin-top: 15px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.event-page form input[type=file] {
+  display: none;
+}
+.event-page form label {
+  display: flex;
+  flex-direction: column;
+}
+.event-page form label textarea {
+  height: 300px;
+}
+.event-page form img {
+  height: 200px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: auto;
+  object-fit: cover;
+}
+.event-page form .btn {
+  margin-top: 15px;
+  width: 300px;
+}
+.event-page form p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
