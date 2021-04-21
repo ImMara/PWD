@@ -1,6 +1,7 @@
-const {findAllBlogs,createBlog,deleteBlog} = require("../queries/blogs.queries");
+const {findAllBlogs,createBlog,findBlogs,deleteBlog} = require("../queries/blogs.queries");
 const multer = require('multer');
 const path = require("path");
+const fs = require('fs');
 
 exports.upload = multer({ storage : multer.diskStorage({
         destination : (req , file , callback) => {
@@ -35,6 +36,9 @@ exports.createBlogs = async (req,res ,next) => {
 
 exports.deleteBlogs = async (req , res , next) => {
     const blogID = req.params.id;
+    const blog = await findBlogs(blogID);
+    const image = blog.image;
+    fs.unlink(path.join(__dirname,`../public/images/blogs/${image}`),(err => err && console.error(err)))
     await deleteBlog(blogID);
     const blogs = await findAllBlogs().populate('author')
     res.render('admin/blogs/index',{ blogs , currentUser:req.user })
