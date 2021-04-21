@@ -9,7 +9,7 @@ block content
                     div=blogs.length+" posts"
         .blog-content
                 each blog in blogs
-                    .card
+                    .card(id=`${blog._id}`)
                          img(src="/images/" + blog.image)
                          h2=blog.title
                          h4="author : "+blog.author.username
