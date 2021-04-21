@@ -1,3 +1,15 @@
 extends ../../layout
 block content
-    h1=event.name
+    .blog-page
+        form(method="post" action="/admin/events/update/"+event._id enctype="multipart/form-data")
+            img(src="/images/events/" + event.image + "")
+            input(type="file" name="image")
+            label title
+                input(type="text" value=`${event.name}` name="title")
+            label date
+                input(type="date" value=event.date name="date")
+            label address
+                input(type="text" value=event.address name="address")
+            button(class="btn") valider
+block script
+    script(src="/javascripts/event.js")
