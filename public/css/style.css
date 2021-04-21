@@ -85,6 +85,7 @@ form button {
 .btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
@@ -431,6 +432,71 @@ form button {
 .blog-page form p {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.events-page .topbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.events-page .topbar .btn {
+  margin-top: 5px;
+  width: 200px;
+  height: 50px;
+}
+.events-page .topbar h1 {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.events-page .topbar .message {
+  width: 70%;
+  margin-top: 5px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #c7c9d3;
+}
+@media (min-width: 768px) {
+  .events-page .topbar .message {
+    margin-left: auto;
+  }
+}
+.events-page hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.events-page .events-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .events-page .events-container img {
+    margin-right: auto;
+  }
+}
+.events-page .events-container .event div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+@media (min-width: 768px) {
+  .events-page .events-container .event {
+    margin-right: auto;
+  }
+}
+.events-page .events-container .action {
+  display: flex;
+}
+.events-page .events-container .action .btn {
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -24,6 +24,12 @@
 
 @import './home';
 @import './admin/index';
+
+// blog css
 @import 'admin/blogs/index';
 @import 'admin/blogs/create';
 @import 'admin/blogs/blog';
+
+// events css
+
+@import 'admin/events/index';

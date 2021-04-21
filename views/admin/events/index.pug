@@ -1,13 +1,20 @@
 extends ../../layout
 block content
-    h1 events layout
-    hr
-    each ev in events
-        div
-            img(src="/images/events.jpg" style="height:150px")
-            div=ev.name
-            div=ev.date
-            div=ev.address
-            div=ev.planning.from
-            div=ev.planning.to
+    .events-page
+        .topbar
+            h1 events pannel
+            .btn create new event
+            .message message
         hr
+        each ev in events
+            .events-container
+                img(src="/images/events.jpg" style="height:150px")
+                .event
+                    div="Event Name : "+ev.name
+                    div="Date : "+ev.date
+                    div="Adress : "+ev.address
+                    div="from : "+ev.planning.from+" to : "+ev.planning.to
+                .action
+                    .btn Edit
+                    .btn Delete
+            hr
