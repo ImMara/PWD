@@ -428,5 +428,9 @@ form button {
   margin-top: 15px;
   width: 300px;
 }
+.blog-page form p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -25,8 +25,6 @@ exports.getBlogs = async (req , res , next ) =>{
 exports.createBlogs = async (req,res ,next) => {
     try{
         const body = req.body;
-        console.log(body)
-        console.log(2,req.file)
         await createBlog({ ...body,image:req.file.filename, author:req.user._id, created:Date.now() })
         res.redirect('/admin/blogs')
     }catch (e){
@@ -47,7 +45,7 @@ exports.deleteBlogs = async (req , res , next) => {
 exports.getBlog = async (req,res,next) => {
     const blogID = req.params.id;
     try{
-       const blog = await findBlogs(blogID);
+       const blog = await findBlogs(blogID) .populate('author');
        res.render('admin/blogs/blog',{ blog , currentUser:req.user});
     }catch (e) {
        next(e)
