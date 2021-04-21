@@ -86,14 +86,14 @@ exports.updateEvents = async (req, res, next) => {
             const upImage = req.file.filename;
             body.image = upImage;
 
+            const {filename: image} = req.file;
+            await sharp(req.file.path)
+                .resize(500)
+                .webp({quality: 90})
+                .toFile(path.resolve(req.file.destination, "resized", image))
+            fs.unlinkSync(req.file.path);
         }
 
-        const {filename: image} = req.file;
-        await sharp(req.file.path)
-            .resize(500)
-            .webp({quality: 90})
-            .toFile(path.resolve(req.file.destination, "resized", image))
-        fs.unlinkSync(req.file.path);
 
         await updateEvent(eventID, body);
         res.redirect('/admin/events/' + eventID);

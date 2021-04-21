@@ -83,14 +83,14 @@ exports.updateBlogs = async (req, res, next) => {
             fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${oldImage}`), (err => err && console.error(err)))
             const upImage = req.file.filename;
             body.image = upImage;
-        }
 
-        const {filename: image} = req.file;
-        await sharp(req.file.path)
-            .resize(800)
-            .webp({quality: 90})
-            .toFile(path.resolve(req.file.destination, "resized", image))
-        fs.unlinkSync(req.file.path);
+            const {filename: image} = req.file;
+            await sharp(req.file.path)
+                .resize(800)
+                .webp({quality: 90})
+                .toFile(path.resolve(req.file.destination, "resized", image))
+            fs.unlinkSync(req.file.path);
+        }
 
         await updateBlog(blogID, body);
         res.redirect('/admin/blogs/' + blogID);
