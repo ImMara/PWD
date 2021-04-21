@@ -1,7 +1,7 @@
 extends ../../layout
 block content
     .blog-page
-        form(method="post" action="/admin/blogs/update/"+blog._id enctype="multipart/form-data")
+        form(method="post" action="/admin/blogs/update/" + blog._id enctype="multipart/form-data")
             img(src="/images/blogs/resized/" + blog.image + "")
             input(type="file" name="image")
             label title

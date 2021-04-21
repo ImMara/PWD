@@ -8,34 +8,34 @@ nav(class="menu")
 
             li
                 a(href="/")
-                 i(class="fa-duotone fa-home")
-                 .
-                    Home
+                    i(class="fa-duotone fa-home")
+                    .
+                        Home
             li
-                 a(href="/admin/blogs")
-                  i(class="fa-duotone fa-newspaper")
-                  .
-                     Blog
+                a(href="/admin/blogs")
+                    i(class="fa-duotone fa-newspaper")
+                    .
+                        Blog
             li
                 a(href="/admin/events")
-                 i(class="fa-duotone fa-calendar-days")
-                 .
-                    Events
+                    i(class="fa-duotone fa-calendar-days")
+                    .
+                        Events
 
             if currentUser.role === 'ROLE_ADMIN'
 
                 li
                     a(href="/admin/siteContents")
-                     i(class="fa-duotone fa-browser")
-                     .
-                        Content
+                        i(class="fa-duotone fa-browser")
+                        .
+                            Content
                 li
-                   a(href="/admin/users")
-                    i(class="fa-duotone fa-clipboard-user")
-                    .
-                       Users
+                    a(href="/admin/users")
+                        i(class="fa-duotone fa-clipboard-user")
+                        .
+                            Users
                 li
                     a(class="btn" href="/admin/logout")
-                     i(class="fa-duotone fa-right-from-bracket")
-                     .
-                      logout
+                        i(class="fa-duotone fa-right-from-bracket")
+                        .
+                            logout

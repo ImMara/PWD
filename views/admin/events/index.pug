@@ -10,17 +10,17 @@ block content
             .events-container(id=ev._id)
                 img(src="/images/events/" + ev.image style="width:250px;height:15Opx;")
                 .event
-                    div="Event Name : "+ev.name
-                    div="Date : "+ev.date.toISOString().substr(0,10)
-                    div="Address : "+ev.address
+                    div="Event Name : " + ev.name
+                    div="Date : " + ev.date.toISOString().substr(0, 10)
+                    div="Address : " + ev.address
                 .action
                     .btn Edit
                     .btn Delete
             hr
         .overlay
-           .overlay-content
-               .close
-                   i(class="fa-duotone fa-2x fa-xmark")
-               include create
+            .overlay-content
+                .close
+                    i(class="fa-duotone fa-2x fa-xmark")
+                include create
     block script
         script(src="/javascripts/events.js")
