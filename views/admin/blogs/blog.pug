@@ -2,13 +2,14 @@ extends ../../layout
 block content
     .blog-page
         form(method="post" action="/admin/blogs/update/"+blog._id enctype="multipart/form-data")
-            label title :
-                input(type="text" value=`${blog.title}` name="title")
-            label content :
-                textarea(name="content")=blog.content
-            img(src="/images/blogs/"+blog.image+"")
+            img(src="/images/blogs/" + blog.image + "")
             input(type="file" name="image")
-            button valider
-            p=blog.author
+            label title
+                input(type="text" value=`${blog.title}` name="title")
+            label content
+                textarea(name="content")=blog.content
+            p=blog.author.username
             p=blog.created
-
+            button(class="btn") valider
+block script
+    script(src="/javascripts/blog.js")

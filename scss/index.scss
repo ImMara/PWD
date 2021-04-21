@@ -24,5 +24,6 @@
 
 @import './home';
 @import './admin/index';
-@import './blog/index';
-@import './blog/create';
+@import 'admin/blogs/index';
+@import 'admin/blogs/create';
+@import 'admin/blogs/blog';

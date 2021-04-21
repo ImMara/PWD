@@ -398,4 +398,35 @@ form button {
   color: #c7c9d3;
 }
 
+.blog-page {
+  width: 100%;
+}
+.blog-page form {
+  margin-top: 15px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.blog-page form input[type=file] {
+  display: none;
+}
+.blog-page form label {
+  display: flex;
+  flex-direction: column;
+}
+.blog-page form label textarea {
+  height: 300px;
+}
+.blog-page form img {
+  height: 200px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: auto;
+  object-fit: cover;
+}
+.blog-page form .btn {
+  margin-top: 15px;
+  width: 300px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+.blog-page{
+  width: 100%;
+  form{
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    input[type="file"]{
+      display: none;
+    }
+    label{
+      display: flex;
+      flex-direction: column;
+      textarea{
+        height: 300px;
+      }
+    }
+    img{
+      height: 200px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      width: auto;
+      object-fit: cover;
+    }
+    .btn{
+      margin-top: 15px;
+       width: 300px;
+     }
+  }
+}
