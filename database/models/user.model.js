@@ -1,23 +1,32 @@
 const mongoose = require('mongoose');
-const schema =  mongoose.Schema;
+const schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
 const userSchema = schema({
-    username:{ type:String , required:true , unique : true },
-    image:{type:String, default:'defaultProfile.png'},
-    local:{
-        email:{ type:String,required: true , unique : true },
-        password:{type:String , required: true },
+
+    username: {type: String, required: true, unique: true},
+
+    image: {type: String, default: 'defaultProfile.png'},
+
+    local: {
+        email: {type: String, required: true, unique: true},
+        password: {type: String, required: true},
     },
-    role: { type:String,default:"ROLE_USER" }
+
+    role: {type: String, default: "ROLE_USER"}
+
 });
 
 userSchema.statics.hashPassword = (password) => {
+
     return bcrypt.hash(password, 12);
+
 }
 
-userSchema.methods.comparePassword = function(password) {
+userSchema.methods.comparePassword = function (password) {
+
     return bcrypt.compare(password, this.local.password)
+
 }
 
 const User = mongoose.model('user', userSchema)
