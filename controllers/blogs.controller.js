@@ -2,7 +2,7 @@ const {findAllBlogs,createBlog} = require("../queries/blogs.queries");
 const multer = require('multer');
 const path = require("path");
 
-const upload = multer({ storage : multer.diskStorage({
+exports.upload = multer({ storage : multer.diskStorage({
         destination : (req , file , callback) => {
             callback(null,path.join(__dirname,'../public/images/'))
         },
@@ -25,8 +25,9 @@ exports.createBlogs = async (req,res ,next) => {
     try{
         const body = req.body;
         console.log(body)
-        await createBlog({ ...body, author:req.user._id, created:Date.now() })
-        res.redirect('/blogs')
+        console.log(2,req.file)
+        await createBlog({ ...body,image:req.file.filename, author:req.user._id, created:Date.now() })
+        res.redirect('/admin/blogs')
     }catch (e){
         next(e)
     }
