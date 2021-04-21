@@ -498,5 +498,55 @@ form button {
   margin-top: 5px;
   margin-left: 5px;
 }
+.events-page .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.9);
+  color: #f1f1f3;
+  top: 0;
+  left: 0;
+}
+.events-page .overlay .overlay-content {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #1e1f26;
+}
+.events-page .overlay .overlay-content .close {
+  position: absolute;
+  top: 11%;
+  left: 6%;
+  color: white;
+  cursor: pointer;
+}
+.events-page .overlay .overlay-content .close :hover {
+  transition: all 0.2s ease-in-out;
+  color: #a00808;
+}
+
+.events-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.events-form label {
+  display: flex;
+  flex-direction: column;
+}
+.events-form .btn {
+  background: none;
+  width: 300px;
+  color: #c7c9d3;
+}
+.events-form .btn:hover {
+  color: #3d88c3;
+}
 
 /*# sourceMappingURL=style.css.map */

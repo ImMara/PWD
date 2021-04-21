@@ -12,9 +12,15 @@ block content
                 .event
                     div="Event Name : "+ev.name
                     div="Date : "+ev.date
-                    div="Adress : "+ev.address
-                    div="from : "+ev.planning.from+" to : "+ev.planning.to
+                    div="Address : "+ev.address
                 .action
                     .btn Edit
                     .btn Delete
             hr
+        .overlay
+           .overlay-content
+               .close
+                   i(class="fa-duotone fa-2x fa-xmark")
+               include create
+    block script
+        script(src="/javascripts/events.js")
