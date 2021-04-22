@@ -36,6 +36,6 @@ exports.findUserPerId = (id) => {
 
 exports.findAllUsers = () => {
 
-    return User.find();
+    return User.find({},'-local.password');
 
 }

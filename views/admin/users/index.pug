@@ -1,24 +1,28 @@
 extends ../../layout
 block content
-    div
-        div
-            h2 User pannel
+    .users-page
+        .topbar
+            h1 User pannel
             div=users.length + " user"
+            p=users[0]
         hr
-        table
-            thead
-                tr
-                    th Username
-                    th image
-                    th Email
-                    th Role
-                    th Action
-            tbody
-                each user in users
+        .table
+            table
+                thead
                     tr
-                        th=user.username
-                        th=user.image
-                        th=user.local.email
-                        th=user.role
-                        th
-                            .btn delete
+                        th Username
+                        th image
+                        th Email
+                        th Role
+                        th Action
+                tbody
+                    each user in users
+                        tr
+                            td=user.username
+                            td=user.image
+                            td=user.local.email
+                            td
+                                select
+                                    option(value="ROLE_ADMIN") ROLE_ADMIN
+                            td
+                                .btn delete
