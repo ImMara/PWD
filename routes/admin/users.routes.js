@@ -1,7 +1,9 @@
 const {ensureAuthenticated} = require("../../config/guards.config");
 const router = require('express').Router();
-const {getUsers} = require('../../controllers/users.controller');
+const {getUsers,updateRole} = require('../../controllers/users.controller');
 
 router.get('/', ensureAuthenticated, getUsers)
+router.patch('/:id',updateRole)
+
 
 module.exports = router;

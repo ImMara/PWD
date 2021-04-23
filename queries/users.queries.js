@@ -34,8 +34,14 @@ exports.findUserPerId = (id) => {
 
 }
 
+exports.findUserAndUpdate = (id, user) => {
+
+    return User.findByIdAndUpdate(id, {$set: user}, {runValidators: true});
+
+}
+
 exports.findAllUsers = () => {
 
-    return User.find({},'-local.password');
+    return User.find({}, '-local.password');
 
 }

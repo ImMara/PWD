@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     init();
 })
 
-const init = () =>{
+init = () =>{
     const inputImage = document.querySelector('.blog-page form input[type="file"]')
     const image = document.querySelector('.blog-page form img')
 

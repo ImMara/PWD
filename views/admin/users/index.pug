@@ -16,7 +16,7 @@ block content
                         th Action
                 tbody
                     each user in users
-                        tr
+                        tr(id=user._id)
                             td=user.username
                             td=user.image
                             td=user.local.email
@@ -25,3 +25,5 @@ block content
                                     option(selected hidden)=user.role
                             td
                                 .btn delete
+    block script
+        script(src='/javascripts/users.js')
