@@ -3,7 +3,10 @@ block content
     .events-page
         .topbar
             h1 events pannel
-            .btn create new event
+            .btn
+                i(class="fa-duotone fa-plus")
+                .
+                    create new event
         hr
         each ev in events
             .events-container(id=ev._id)

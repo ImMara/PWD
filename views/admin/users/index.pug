@@ -22,7 +22,8 @@ block content
                             td=user.image
                             td=user.local.email
                             td
-                                select
-                                    option(value="ROLE_ADMIN") ROLE_ADMIN
+
+                                include role
+                                    option(selected hidden)=user.role
                             td
                                 .btn delete
