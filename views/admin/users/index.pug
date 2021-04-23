@@ -4,7 +4,6 @@ block content
         .topbar
             h1 User pannel
             div=users.length + " user"
-            p=users[0]
         hr
         .table
             table
@@ -22,7 +21,6 @@ block content
                             td=user.image
                             td=user.local.email
                             td
-
                                 include role
                                     option(selected hidden)=user.role
                             td
