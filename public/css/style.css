@@ -630,9 +630,13 @@ form button {
   background-color: #f1f1f3;
   text-indent: 0.01px;
   text-overflow: "";
-  width: 100%;
+  width: 120px;
   height: 50px;
   border: none;
+}
+.users-page .table table td select option {
+  width: 100%;
+  border: 1px solid black;
 }
 .users-page .table table td .btn {
   width: 100%;

@@ -10,15 +10,14 @@ block content
         hr
         each ev in events
             .events-container(id=ev._id)
-                img(src="/images/events/resized/" + ev.image style="width:250px;height:15Opx;")
-                .event
-                    div="Event Name : " + ev.name
-                    div="Date : " + ev.date.toISOString().substr(0, 10)
-                    div="Address : " + ev.address
-                .action
-                    .btn Edit
-                    .btn Delete
-            hr
+                .card(id=`${ev._id}`)
+                    img(src="/images/events/resized/" + ev.image)
+                    h2=ev.name
+                    p=ev.date.toISOString().substr(0,10)
+                    p="address : " + ev.address
+                    .action
+                        .btn edit
+                        .btn delete
         .overlay
             .overlay-content
                 .close

@@ -94,7 +94,6 @@ exports.updateEvents = async (req, res, next) => {
             fs.unlinkSync(req.file.path);
         }
 
-
         await updateEvent(eventID, body);
         res.redirect('/admin/events/' + eventID);
 
