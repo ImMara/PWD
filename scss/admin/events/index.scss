@@ -2,14 +2,15 @@
 
   .topbar {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     flex-wrap: wrap;
+    border-bottom: 1px solid #c7c9d3;
 
     .btn {
       margin-top: 5px;
-      width: 200px;
-      height: 50px;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
 
     h1 {
@@ -35,16 +36,10 @@
     }
   }
 
-  hr {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-
   .events-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
 
     img {

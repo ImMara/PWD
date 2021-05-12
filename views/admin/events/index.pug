@@ -7,9 +7,8 @@ block content
                 i(class="fa-duotone fa-plus")
                 .
                     create new event
-        hr
-        each ev in events
-            .events-container(id=ev._id)
+        .events-container
+            each ev in events
                 .card(id=`${ev._id}`)
                     img(src="/images/events/resized/" + ev.image)
                     h2=ev.name

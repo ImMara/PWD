@@ -436,14 +436,15 @@ form button {
 
 .events-page .topbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   flex-wrap: wrap;
+  border-bottom: 1px solid #c7c9d3;
 }
 .events-page .topbar .btn {
   margin-top: 5px;
-  width: 200px;
-  height: 50px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 .events-page .topbar h1 {
   width: 100%;
@@ -466,15 +467,10 @@ form button {
     margin-left: auto;
   }
 }
-.events-page hr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
 .events-page .events-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
 }
 .events-page .events-container img {
@@ -586,21 +582,19 @@ form button {
 .users-page .topbar h1 {
   text-align: center;
 }
-.users-page hr {
-  margin-top: 15px;
-}
 .users-page .table {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .users-page .table table {
-  margin-top: 15px;
+  margin-top: 30px;
   width: 100%;
   border-collapse: collapse;
 }
 .users-page .table table th {
-  border: 1px solid black;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #c7c9d3;
 }
 .users-page .table table th:nth-child(2), .users-page .table table th:nth-child(3) {
   display: none;
@@ -611,7 +605,7 @@ form button {
   }
 }
 .users-page .table table td {
-  border: 1px solid #3d88c3;
+  border-bottom: 1px solid #c7c9d3;
   text-align: center;
 }
 .users-page .table table td:nth-child(2), .users-page .table table td:nth-child(3) {
@@ -640,7 +634,7 @@ form button {
 }
 .users-page .table table td .btn {
   width: 100%;
-  height: 50px;
+  padding: 5px;
   background-color: #f1f1f3;
   border: 1px solid #a00808;
   color: #a00808;
@@ -648,9 +642,6 @@ form button {
 .users-page .table table td .btn:hover {
   background-color: #a00808;
   color: #f1f1f3;
-}
-.users-page .table table td:last-child {
-  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
