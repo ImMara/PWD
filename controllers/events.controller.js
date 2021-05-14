@@ -20,7 +20,6 @@ exports.createEvents = async (req, res, next) => {
     try {
 
         const body = req.body;
-        const events = await findAllEvents();
 
         const {filename: image} = req.file;
         await sharp(req.file.path)
@@ -30,7 +29,8 @@ exports.createEvents = async (req, res, next) => {
             fs.unlinkSync(req.file.path)
         await createEvent({...body, image: req.file.filename})
 
-        res.redirect("/admin/events/")
+        const events = await findAllEvents();
+        res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
 
     } catch (e) {
 

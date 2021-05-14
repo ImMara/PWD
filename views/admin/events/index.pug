@@ -8,6 +8,11 @@ block content
                 i(class="fa-duotone fa-plus")
                 .
                     create new event
+        if success
+            ul(class="success-message")
+                li
+                    i(class="fad fa-8x fa-thumbs-up")
+                li=success
         if errors
             ul(class="error-message")
                 li

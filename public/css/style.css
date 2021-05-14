@@ -188,6 +188,27 @@ form button {
   left: -1.5%;
 }
 
+.success-message {
+  position: relative;
+  min-height: 120px;
+  padding: 30px;
+  background-color: #d3ffe1;
+  border-radius: 5px;
+  border: 1px solid #c7c9d3;
+  color: #0a0a0c;
+  margin-top: 15px;
+}
+.success-message li {
+  margin-left: 15px;
+  padding: 5px;
+}
+.success-message li:first-child {
+  opacity: 0.1;
+  position: absolute;
+  top: -8.5%;
+  left: -1.5%;
+}
+
 .menu {
   width: 100%;
   font-weight: bold;
