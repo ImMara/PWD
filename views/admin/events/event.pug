@@ -2,7 +2,10 @@ extends ../../layout
 block content
     .event-page
         form(method="post" action="/admin/events/update/" + event._id enctype="multipart/form-data")
-            img(src="/images/events/resized/" + event.image + "")
+            .img-container
+                img(src="/images/events/resized/" + event.image + "")
+                .button
+                    i(class="fad fa-2x fa-pen-square")
             input(type="file" name="image")
             label name
                 input(type="text" value=`${event.name}` name="name")

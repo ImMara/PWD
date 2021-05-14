@@ -9,8 +9,9 @@
   transition: 0.5s ease;
 
   &:hover {
-    border: 1px solid $blue-dark;
-    color: $blue-dark;
+    background-color: $gray-dark-8;
+    border: 1px solid $gray-dark-8;
+    color: $gray-light-6;
   }
 }
 

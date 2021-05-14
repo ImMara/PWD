@@ -28,6 +28,12 @@
 
       .btn {
         font-weight: bold;
+        svg{
+          margin-right: 5px;
+          border: 1px solid $gray-dark-8;
+          border-radius: 50%;
+          padding: 4px 5px;
+        }
       }
 
       .stats {

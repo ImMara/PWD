@@ -20,12 +20,29 @@
       }
     }
 
-    img {
-      height: 200px;
+    .img-container{
+      position: relative;
+      display: flex;
       margin-bottom: 15px;
-      cursor: pointer;
-      width: auto;
-      object-fit: cover;
+      justify-content: center;
+      align-items: center;
+      background-color: $gray-dark-8;
+      img {
+        height: 200px;
+        cursor: pointer;
+        width: 100%;
+        object-fit: contain;
+      }
+      .button{
+        position: absolute;
+        top: 80%;
+        left: 1%;
+        cursor: pointer;
+        color: $gray-light-6;
+        &:hover{
+          color: $gray-light-3;
+        }
+      }
     }
 
     .btn {

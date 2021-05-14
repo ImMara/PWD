@@ -31,9 +31,11 @@
           }
         }
       }
-      tr{
+
+      tr {
         height: 50px;
       }
+
       td {
         border-bottom: 1px solid $gray-light-3;
         text-align: center;
@@ -49,31 +51,37 @@
           }
         }
 
-        .custom-select{
+        .custom-select {
           position: relative;
           padding: 5px;
-          select{
+
+          select {
             display: none;
           }
-          &:hover{
+
+          &:hover {
             transition: all 0.5s ease;
             border-color: $gray-dark-8;
           }
-          &:hover .selected{
+
+          &:hover .selected {
             transition: all 0.5s ease;
             color: $gray-dark-8;
           }
-          &:hover .selected i{
+
+          &:hover .selected i {
             transition: all 0.5s ease;
             color: $gray-dark-8;
           }
-          .selected{
+
+          .selected {
             width: 100%;
             position: relative;
             cursor: pointer;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
+
             & i {
               color: silver;
               position: absolute;
@@ -81,7 +89,8 @@
               left: 94%;
             }
           }
-          .drop{
+
+          .drop {
             width: 100%;
             height: 60px;
             position: absolute;
@@ -97,30 +106,37 @@
             background-color: $gray-light-6;
             border: 1px solid $gray-light-3;
             scrollbar-color: $gray-light-3 $gray-light-6;
-            span{
+
+            span {
               text-align: center;
               width: 100%;
               padding: 5px 0px;
-              &:first-child{
+
+              &:first-child {
                 border-top-left-radius: 4px;
               }
-              &:last-child{
+
+              &:last-child {
                 border-bottom-left-radius: 4px;
               }
-              &:hover{
+
+              &:hover {
                 color: white;
                 background-color: $gray-dark-8;
               }
             }
           }
-          .d-block{
+
+          .d-block {
             display: flex;
           }
-          .r-180{
+
+          .r-180 {
             animation-duration: 0.5s;
             animation-name: rotate;
             animation-fill-mode: forwards;
           }
+
           .r-180-none {
             animation-duration: 0.5s;
             animation-name: invert-rotate;
@@ -137,15 +153,16 @@
     }
   }
 }
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(180deg);
   }
 }
+
 @keyframes invert-rotate {
   from {
     transform: rotate(180deg);

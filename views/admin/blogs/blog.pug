@@ -2,7 +2,10 @@ extends ../../layout
 block content
     .blog-page
         form(method="post" action="/admin/blogs/update/" + blog._id enctype="multipart/form-data")
-            img(src="/images/blogs/resized/" + blog.image + "")
+            .img-container
+                img(src="/images/blogs/resized/" + blog.image + "")
+                .button
+                    i(class="fad fa-2x fa-pen-square")
             input(type="file" name="image")
             label title
                 input(type="text" value=`${blog.title}` name="title")
@@ -10,6 +13,6 @@ block content
                 textarea(name="content")=blog.content
             p="Author : " + blog.author.username
             p="Date : " + blog.created
-            button(class="btn") valider
+            button(class="btn") save
 block script
     script(src="/javascripts/blog.js")

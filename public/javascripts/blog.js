@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 init = () =>{
     const inputImage = document.querySelector('.blog-page form input[type="file"]')
-    const image = document.querySelector('.blog-page form img')
+    const image = document.querySelector('.blog-page form .img-container')
 
     image.onclick = (e) =>{
         inputImage.click();
