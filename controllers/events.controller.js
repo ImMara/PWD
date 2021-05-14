@@ -46,13 +46,15 @@ exports.deleteEvents = async (req, res, next) => {
     const eventID = req.params.id;
     const event = await findEvents(eventID);
 
+    let name = event.name;
+
     const image = event.image;
     fs.unlink(path.join(__dirname, `../public/images/events/resized/${image}`), (err => err && console.error(err)))
 
     await deleteEvent(eventID);
 
     const events = await findAllEvents();
-    res.render('admin/events/index', {events, currentUser: req.user})
+    res.render('admin/events/index', {events, success:`successfully deleted ${name}`, currentUser: req.user})
 
 }
 
