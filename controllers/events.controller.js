@@ -20,22 +20,23 @@ exports.createEvents = async (req, res, next) => {
     try {
 
         const body = req.body;
+        const events = await findAllEvents();
 
         const {filename: image} = req.file;
         await sharp(req.file.path)
-            .resize(800)
-            .webp({quality: 90})
-            .toFile(path.resolve(req.file.destination, "resized", image))
-        fs.unlinkSync(req.file.path);
-
+                .resize(800)
+                .webp({quality: 90})
+                .toFile(path.resolve(req.file.destination, "resized", image))
+            fs.unlinkSync(req.file.path)
         await createEvent({...body, image: req.file.filename})
-        res.redirect('/admin/events')
+
+        res.redirect("/admin/events/")
 
     } catch (e) {
 
         const events = await findAllEvents();
         const errors = Object.keys(e.errors).map(key => e.errors[key].message)
-        res.status(400).render('admin/events/index',{events,errors,isAuthenticated:req.isAuthenticated , currentUser:req.user})
+        res.status(400).render('admin/events/index',{events,errors, currentUser:req.user})
 
     }
 }

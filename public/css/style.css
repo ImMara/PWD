@@ -169,6 +169,7 @@ form button {
 
 .error-message {
   position: relative;
+  min-height: 120px;
   padding: 30px;
   background-color: #ffcfcb;
   border-radius: 5px;

@@ -3,7 +3,7 @@ const schema = mongoose.Schema;
 
 const eventSchema = schema({
 
-    name: {type: String, required: true, minLength: [10,'name is too short'], maxLength:[20,'name is too long'], unique: true},
+    name: {type: String, required: true, minLength: [3,'name is too short'], maxLength:[50,'name is too long'], unique: true},
 
     date: {type: Date, required: true},
 
