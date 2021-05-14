@@ -21,21 +21,35 @@ exports.createEvents = async (req, res, next) => {
 
         const body = req.body;
 
-        const {filename: image} = req.file;
-        await sharp(req.file.path)
+        if(req.file){
+            const {filename: image} = req.file;
+            await sharp(req.file.path)
                 .resize(800)
                 .webp({quality: 90})
                 .toFile(path.resolve(req.file.destination, "resized", image))
             fs.unlinkSync(req.file.path)
-        await createEvent({...body, image: req.file.filename})
+            await createEvent({...body, image: req.file.filename})
+            const events = await findAllEvents();
+            res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
+        }else{
+            await createEvent(body)
+            const events = await findAllEvents();
+            res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
+        }
 
-        const events = await findAllEvents();
-        res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
+
 
     } catch (e) {
-
+        console.log(0,e)
+        console.log(1,e.code)
+        let errors;
         const events = await findAllEvents();
-        const errors = Object.keys(e.errors).map(key => e.errors[key].message)
+
+        if(e.code){
+            errors= ['duplicate key']
+        }else{
+            errors = Object.keys(e.errors).map(key => e.errors[key].message)
+        }
         res.status(400).render('admin/events/index',{events,errors, currentUser:req.user})
 
     }
