@@ -10,14 +10,31 @@ const {
 const { uploadBlogs } = require('../../config/multer.config')
 
 // get routes
-router.get('/', ensureAuthenticated, getBlogs)
-router.get('/:id', getBlog)
+router.get('/',
+    ensureAuthenticated,
+    getBlogs
+)
+router.get('/:id',
+    ensureAuthenticated,
+    getBlog
+)
 
 // post route
-router.post('/', uploadBlogs.single('image'), createBlogs)
-router.post('/update/:id', uploadBlogs.single('image'), updateBlogs)
+router.post('/',
+    ensureAuthenticated,
+    uploadBlogs.single('image'),
+    createBlogs
+)
+router.post('/update/:id',
+    ensureAuthenticated,
+    uploadBlogs.single('image'),
+    updateBlogs
+)
 
 // delete route
-router.delete('/:id', deleteBlogs)
+router.delete('/:id',
+    ensureAuthenticated,
+    deleteBlogs
+)
 
 module.exports = router;

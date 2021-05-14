@@ -167,6 +167,26 @@ form button {
   color: #f1f1f3;
 }
 
+.error-message {
+  position: relative;
+  padding: 30px;
+  background-color: #ffcfcb;
+  border-radius: 5px;
+  border: 1px solid #c7c9d3;
+  color: #0a0a0c;
+  margin-top: 15px;
+}
+.error-message li {
+  margin-left: 15px;
+  padding: 5px;
+}
+.error-message li:first-child {
+  opacity: 0.1;
+  position: absolute;
+  top: -8.5%;
+  left: -1.5%;
+}
+
 .menu {
   width: 100%;
   font-weight: bold;
@@ -561,6 +581,9 @@ form button {
 .events-form label {
   display: flex;
   flex-direction: column;
+}
+.events-form label input {
+  color: #f1f1f3;
 }
 .events-form .btn {
   background: none;

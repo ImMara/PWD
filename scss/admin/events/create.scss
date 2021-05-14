@@ -3,9 +3,13 @@
   flex-direction: column;
   width: 80%;
 
+
   label {
     display: flex;
     flex-direction: column;
+    input{
+      color:$gray-light-6;
+    }
   }
 
   .btn {

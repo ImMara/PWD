@@ -5,14 +5,31 @@ const router = require('express').Router();
 const {getEvents} = require('../../controllers/events.controller');
 
 // get routes
-router.get('/', ensureAuthenticated, getEvents)
-router.get('/:id', getEvent)
+router.get('/',
+    ensureAuthenticated,
+    getEvents
+)
+router.get('/:id',
+    ensureAuthenticated,
+    getEvent
+)
 
 
 //post route
-router.post('/', uploadEvents.single('image'), createEvents)
-router.post('/update/:id', uploadEvents.single('image'), updateEvents)
+router.post('/',
+    ensureAuthenticated,
+    uploadEvents.single('image'),
+    createEvents
+)
+router.post('/update/:id',
+    ensureAuthenticated,
+    uploadEvents.single('image'),
+    updateEvents
+)
 
 //detele route
-router.delete('/:id', deleteEvents)
+router.delete('/:id',
+    ensureAuthenticated,
+    deleteEvents
+)
 module.exports = router;

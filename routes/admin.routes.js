@@ -12,7 +12,7 @@ router.get('/logout', logout)
 
 
 router.use('/events', events)
-router.use('/users', users)
+router.use('/users',  users)
 router.use('/blogs', blogs)
 router.use('/siteContents', siteContents)
 

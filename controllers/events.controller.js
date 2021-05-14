@@ -33,7 +33,9 @@ exports.createEvents = async (req, res, next) => {
 
     } catch (e) {
 
-        next(e)
+        const events = await findAllEvents();
+        const errors = Object.keys(e.errors).map(key => e.errors[key].message)
+        res.status(400).render('admin/events/index',{events,errors,isAuthenticated:req.isAuthenticated , currentUser:req.user})
 
     }
 }
