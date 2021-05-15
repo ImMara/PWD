@@ -46,6 +46,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 
     img {
@@ -59,15 +60,6 @@
       }
 
       margin-right: auto;
-    }
-
-    .action {
-      display: flex;
-
-      .btn {
-        margin-top: 5px;
-        margin-left: 5px;
-      }
     }
   }
 

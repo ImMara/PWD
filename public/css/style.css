@@ -143,21 +143,25 @@ form button {
   text-overflow: ellipsis;
 }
 .card div {
+  display: flex;
   margin-top: 15px;
 }
 .card div .btn {
   margin-top: 5px;
 }
 .card div .btn:nth-child(1) {
-  border: 1px solid #248c46;
-  background-color: #f1f1f3;
-  color: #248c46;
+  width: 50%;
+  margin-right: 5px;
+  background-color: #0a0a0c;
+  color: #f1f1f3;
+  border-color: #0a0a0c;
 }
 .card div .btn:nth-child(1):hover {
-  background-color: #248c46;
-  color: #f1f1f3;
+  background-color: #f1f1f3;
+  color: #0a0a0c;
 }
 .card div .btn:nth-child(2) {
+  width: 50%;
   background-color: #f1f1f3;
   border: 1px solid #a00808;
   color: #a00808;
@@ -323,6 +327,17 @@ form button {
   width: 200px;
   height: auto;
   margin-bottom: 50px;
+}
+
+.not-found {
+  display: flex;
+  height: 100%;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.not-found img {
+  border-radius: 5px;
 }
 
 .blog {
@@ -543,6 +558,7 @@ form button {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 .events-page .events-container img {
@@ -554,13 +570,6 @@ form button {
 .events-page .events-container .event div {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-.events-page .events-container .action {
-  display: flex;
-}
-.events-page .events-container .action .btn {
-  margin-top: 5px;
-  margin-left: 5px;
 }
 .events-page .overlay {
   position: fixed;

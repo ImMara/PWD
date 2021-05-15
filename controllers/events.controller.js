@@ -22,6 +22,7 @@ exports.createEvents = async (req, res, next) => {
         const body = req.body;
 
         if(req.file){
+
             const {filename: image} = req.file;
             await sharp(req.file.path)
                 .resize(800)
@@ -29,6 +30,7 @@ exports.createEvents = async (req, res, next) => {
                 .toFile(path.resolve(req.file.destination, "resized", image))
             fs.unlinkSync(req.file.path)
             await createEvent({...body, image: req.file.filename})
+
             const events = await findAllEvents();
             res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
         }else{
@@ -37,11 +39,8 @@ exports.createEvents = async (req, res, next) => {
             res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
         }
 
-
-
     } catch (e) {
-        console.log(0,e)
-        console.log(1,e.code)
+
         let errors;
         const events = await findAllEvents();
 
@@ -56,19 +55,26 @@ exports.createEvents = async (req, res, next) => {
 }
 
 exports.deleteEvents = async (req, res, next) => {
-
     const eventID = req.params.id;
     const event = await findEvents(eventID);
 
-    let name = event.name;
+    try{
 
-    const image = event.image;
-    fs.unlink(path.join(__dirname, `../public/images/events/resized/${image}`), (err => err && console.error(err)))
+        let name = event.name;
 
-    await deleteEvent(eventID);
+        const image = event.image;
+        fs.unlink(path.join(__dirname, `../public/images/events/resized/${image}`), (err => err && console.error(err)))
 
-    const events = await findAllEvents();
-    res.render('admin/events/index', {events, success:`successfully deleted ${name}`, currentUser: req.user})
+        await deleteEvent(eventID);
+
+        const events = await findAllEvents();
+        res.render('admin/events/index', {events, success:`successfully deleted ${name}`, currentUser: req.user})
+
+    }catch (e) {
+
+        next(e)
+
+    }
 
 }
 
@@ -83,7 +89,7 @@ exports.getEvent = async (req, res, next) => {
 
     } catch (e) {
 
-        next(e)
+        res.render('404',{ currentUser: req.user})
 
     }
 }
