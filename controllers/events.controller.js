@@ -55,6 +55,7 @@ exports.createEvents = async (req, res, next) => {
 }
 
 exports.deleteEvents = async (req, res, next) => {
+
     const eventID = req.params.id;
     const event = await findEvents(eventID);
 
@@ -117,14 +118,28 @@ exports.updateEvents = async (req, res, next) => {
                 .webp({quality: 90})
                 .toFile(path.resolve(req.file.destination, "resized", image))
             fs.unlinkSync(req.file.path);
+            await updateEvent(eventID, body);
+            const events = await findAllEvents();
+            res.render('admin/events/index' ,{events , success:`successfully updated ${body.name}`,currentUser: req.user});
+        }else{
+            await updateEvent(eventID,body)
+            const events = await findAllEvents();
+            res.render("admin/events/index",{ events, success:`successfully updated ${body.name}`, currentUser: req.user});
         }
 
-        await updateEvent(eventID, body);
-        res.redirect('/admin/events/' + eventID);
+
 
     } catch (e) {
 
-        next(e)
+        let errors;
+        const event = await findEvents(eventID);
+
+        if(e.code){
+            errors= ['duplicate key']
+        }else{
+            errors = Object.keys(e.errors).map(key => e.errors[key].message)
+        }
+        res.status(400).render('admin/events/event',{event,errors, currentUser:req.user})
 
     }
 }
