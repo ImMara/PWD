@@ -21,7 +21,7 @@ exports.createEvents = async (req, res, next) => {
 
         const body = req.body;
 
-        if(req.file){
+        if (req.file) {
 
             const {filename: image} = req.file;
             await sharp(req.file.path)
@@ -32,11 +32,19 @@ exports.createEvents = async (req, res, next) => {
             await createEvent({...body, image: req.file.filename})
 
             const events = await findAllEvents();
-            res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
-        }else{
+            res.render("admin/events/index", {
+                events,
+                success: `successfully added ${body.name}`,
+                currentUser: req.user
+            })
+        } else {
             await createEvent(body)
             const events = await findAllEvents();
-            res.render("admin/events/index",{ events, success:`successfully added ${body.name}`, currentUser: req.user})
+            res.render("admin/events/index", {
+                events,
+                success: `successfully added ${body.name}`,
+                currentUser: req.user
+            })
         }
 
     } catch (e) {
@@ -44,12 +52,12 @@ exports.createEvents = async (req, res, next) => {
         let errors;
         const events = await findAllEvents();
 
-        if(e.code){
-            errors= ['duplicate key']
-        }else{
+        if (e.code) {
+            errors = ['duplicate key']
+        } else {
             errors = Object.keys(e.errors).map(key => e.errors[key].message)
         }
-        res.status(400).render('admin/events/index',{events,errors, currentUser:req.user})
+        res.status(400).render('admin/events/index', {events, errors, currentUser: req.user})
 
     }
 }
@@ -59,7 +67,7 @@ exports.deleteEvents = async (req, res, next) => {
     const eventID = req.params.id;
     const event = await findEvents(eventID);
 
-    try{
+    try {
 
         let name = event.name;
 
@@ -69,9 +77,9 @@ exports.deleteEvents = async (req, res, next) => {
         await deleteEvent(eventID);
 
         const events = await findAllEvents();
-        res.render('admin/events/index', {events, success:`successfully deleted ${name}`, currentUser: req.user})
+        res.render('admin/events/index', {events, success: `successfully deleted ${name}`, currentUser: req.user})
 
-    }catch (e) {
+    } catch (e) {
 
         next(e)
 
@@ -90,7 +98,7 @@ exports.getEvent = async (req, res, next) => {
 
     } catch (e) {
 
-        res.render('404',{ currentUser: req.user})
+        res.render('404', {currentUser: req.user})
 
     }
 }
@@ -108,7 +116,6 @@ exports.updateEvents = async (req, res, next) => {
             const event = await findEvents(eventID);
             const oldImage = event.image;
             fs.unlink(path.join(__dirname, `../public/images/events/resized/${oldImage}`), (err => err && console.error(err)))
-
             const upImage = req.file.filename;
             body.image = upImage;
 
@@ -118,28 +125,38 @@ exports.updateEvents = async (req, res, next) => {
                 .webp({quality: 90})
                 .toFile(path.resolve(req.file.destination, "resized", image))
             fs.unlinkSync(req.file.path);
+
             await updateEvent(eventID, body);
             const events = await findAllEvents();
-            res.render('admin/events/index' ,{events , success:`successfully updated ${body.name}`,currentUser: req.user});
-        }else{
-            await updateEvent(eventID,body)
+            res.render('admin/events/index', {
+                events,
+                success: `successfully updated ${body.name}`,
+                currentUser: req.user
+            });
+
+        } else {
+
+            await updateEvent(eventID, body)
             const events = await findAllEvents();
-            res.render("admin/events/index",{ events, success:`successfully updated ${body.name}`, currentUser: req.user});
+            res.render("admin/events/index", {
+                events,
+                success: `successfully updated ${body.name}`,
+                currentUser: req.user
+            });
+
         }
-
-
 
     } catch (e) {
 
         let errors;
         const event = await findEvents(eventID);
 
-        if(e.code){
-            errors= ['duplicate key']
-        }else{
+        if (e.code) {
+            errors = ['duplicate key']
+        } else {
             errors = Object.keys(e.errors).map(key => e.errors[key].message)
         }
-        res.status(400).render('admin/events/event',{event,errors, currentUser:req.user})
+        res.status(400).render('admin/events/event', {event, errors, currentUser: req.user})
 
     }
 }

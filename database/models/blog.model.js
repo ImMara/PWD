@@ -3,12 +3,20 @@ const schema = mongoose.Schema;
 
 const blogSchema = schema({
 
-    title: {type: String, required: true, unique: true},
+    title: {
+        type: String,
+        required: true,
+        unique: true,
+        minLength: [3,'title is to short'],
+        maxLength:[100,'title is to long'],
+    },
 
     content: {
         type: String,
-        minLength: [1, 'message trop court'],
-        required: [true, 'Champ requis']
+        minLength: [50, 'your post is to short'],
+        required: [true, 'content is required'],
+        maxLength: [250,'your post is to long']
+
     },
 
     created: {

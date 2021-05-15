@@ -1,6 +1,12 @@
 extends ../../layout
 block content
     .blog-page
+        if errors
+            ul(class="error-message")
+                li
+                    i(class="fad fa-8x fa-exclamation-triangle")
+                each error in errors
+                    li=error
         form(method="post" action="/admin/blogs/update/" + blog._id enctype="multipart/form-data")
             .img-container
                 img(src="/images/blogs/resized/" + blog.image + "")

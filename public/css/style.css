@@ -449,6 +449,9 @@ form button {
   justify-content: center;
   height: 80%;
 }
+.createPost input, .createPost textarea {
+  color: #f1f1f3;
+}
 .createPost label {
   margin-bottom: 7.5px;
   margin-top: 7.5px;

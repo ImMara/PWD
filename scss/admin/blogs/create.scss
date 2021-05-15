@@ -5,6 +5,9 @@
   justify-content: center;
   height: 80%;
 
+  input,textarea{
+    color: $gray-light-6;
+  }
   label {
     margin-bottom: 7.5px;
     margin-top: 7.5px;

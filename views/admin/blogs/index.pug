@@ -10,6 +10,17 @@ block content
                         create new post
                 .stats
                     div=blogs.length + " posts"
+        if success
+            ul(class="success-message")
+                li
+                    i(class="fad fa-8x fa-thumbs-up")
+                li=success
+        if errors
+            ul(class="error-message")
+                li
+                    i(class="fad fa-8x fa-exclamation-triangle")
+                each error in errors
+                    li=error
         .blog-content
             each blog in blogs
                 .card(id=`${blog._id}`)
