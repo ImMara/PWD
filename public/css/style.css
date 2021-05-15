@@ -406,7 +406,6 @@ form button {
 @media (min-width: 768px) {
   .blog .blog-content {
     flex-direction: row;
-    justify-content: space-around;
   }
 }
 .blog .overlay {

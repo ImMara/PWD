@@ -15,7 +15,6 @@ const blogSchema = schema({
         type: String,
         minLength: [50, 'your post is to short'],
         required: [true, 'content is required'],
-        maxLength: [250,'your post is to long']
 
     },
 
