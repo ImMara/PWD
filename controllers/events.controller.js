@@ -51,6 +51,8 @@ exports.createEvents = async (req, res, next) => {
 
         let errors;
         const events = await findAllEvents();
+        const {filename: image} = req.file;
+        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
 
         if (e.code) {
             errors = ['duplicate key']
@@ -150,6 +152,9 @@ exports.updateEvents = async (req, res, next) => {
 
         let errors;
         const event = await findEvents(eventID);
+
+        const {filename: image} = req.file;
+        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
 
         if (e.code) {
             errors = ['duplicate key']

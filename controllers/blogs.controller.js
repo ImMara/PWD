@@ -3,7 +3,6 @@ const path = require("path");
 const sharp = require('sharp');
 const fs = require('fs');
 
-
 exports.getBlogs = async (req, res, next) => {
     try {
 
@@ -22,6 +21,7 @@ exports.createBlogs = async (req, res, next) => {
 
         const body = req.body;
         if (req.file) {
+
             const {filename: image} = req.file;
             await sharp(req.file.path)
                 .resize(800)
@@ -30,6 +30,7 @@ exports.createBlogs = async (req, res, next) => {
             fs.unlinkSync(req.file.path);
 
             await createBlog({...body, image: req.file.filename, author: req.user._id, created: Date.now()})
+
             const blogs = await findAllBlogs().populate('author');
             res.render('admin/blogs/index', {blogs, success: `successfully added ${body.title}`, currentUser: req.user})
 
@@ -45,7 +46,11 @@ exports.createBlogs = async (req, res, next) => {
     } catch (e) {
 
         let errors;
+        const {filename: image} = req.file;
+        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+
         const blogs = await findAllBlogs().populate('author');
+
         if (e.code) {
             errors = ['duplicate key']
         } else {
@@ -146,6 +151,9 @@ exports.updateBlogs = async (req, res, next) => {
 
         let errors;
         const blog = await findBlogs(blogID).populate('author');
+
+        const {filename: image} = req.file;
+        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
 
         if (e.code) {
             errors = ['duplicate key']
