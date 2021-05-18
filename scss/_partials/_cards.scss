@@ -48,9 +48,8 @@
     text-overflow: ellipsis;
   }
 
-  div {
+  .action{
     display: flex;
-    margin-top: 15px;
 
     .btn {
       margin-top: 5px;
@@ -70,7 +69,8 @@
       &:nth-child(2) {
         width: 50%;
         @include btn-red;
+
+        }
       }
-    }
   }
 }

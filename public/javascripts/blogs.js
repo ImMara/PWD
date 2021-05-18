@@ -3,10 +3,18 @@ window.addEventListener('DOMContentLoaded',()=>{
 })
 
 const init = () => {
+
     const createBtn = document.querySelector('.topbar .flex .btn')
+
     const overlay = document.querySelector('.blog .overlay')
+
     const closeOverlay = document.querySelector('.blog .overlay .close')
     const deleteBtn = document.querySelectorAll('.card div .btn:nth-child(2)')
+
+    const deleteOverlay = document.querySelector('.alert')
+    const overlayDeleteBtn = deleteOverlay.querySelectorAll('.alert-box .action .btn')
+    const message = deleteOverlay.querySelector('.alert-message span')
+
     const editBtn = document.querySelectorAll('.card div .btn:first-child')
     const container = document.querySelector('body')
 
@@ -16,14 +24,24 @@ const init = () => {
     }
 
     deleteBtn.forEach(el => {
-        el.onclick = ($event) => {
+        el.onclick = ($event) =>{
+            deleteOverlay.style.display= "block";
             const blogID = $event.target.parentElement.parentElement.getAttribute('id')
-            axios.delete('/admin/blogs/' + blogID)
-                .then(res => {
-                    container.innerHTML = res.data;
-                    init();
-                })
-                .catch(error => console.log(error));
+            const name = $event.target.parentElement.parentElement.querySelector('h2').innerText
+
+            message.innerHTML=name;
+
+            overlayDeleteBtn[0].onclick = (e) =>{
+                deleteOverlay.style.display='none';
+            }
+            overlayDeleteBtn[1].onclick = (e) =>{
+                axios.delete('/admin/blogs/' + blogID)
+                         .then(res => {
+                            container.innerHTML = res.data;
+                            init();
+                         })
+                         .catch(error => console.log(error));
+            }
         }
     })
 

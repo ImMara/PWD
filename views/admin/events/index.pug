@@ -34,6 +34,14 @@ block content
                 .close
                     i(class="fa-duotone fa-2x fa-xmark")
                 include create
-
+        .alert
+            .alert-box
+                i(class="fa-duotone fa-3x fa-exclamation")
+                p(class="title") Are you sure ?
+                p(class="alert-message") You will not be able to recover
+                    span content !
+                .action
+                    .btn cancel
+                    .btn yes , do it !
     block script
         script(src="/javascripts/events.js")
