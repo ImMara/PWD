@@ -14,8 +14,10 @@
 
   .btn {
     background: none;
-    width: 300px;
     color: $gray-light-3;
+    @media (min-width: $breakpoint-tablet){
+      width: 300px;
+    }
 
     &:hover {
       color: $blue-dark;

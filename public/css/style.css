@@ -517,6 +517,7 @@ form button {
 .blog .overlay .overlay-content {
   width: 90%;
   height: 80%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -525,8 +526,10 @@ form button {
 }
 .blog .overlay .overlay-content .close {
   position: absolute;
-  top: 11%;
-  left: 6%;
+  top: 0;
+  left: 0;
+  margin-left: 15px;
+  margin-top: 15px;
   color: white;
   cursor: pointer;
 }
@@ -682,6 +685,7 @@ form button {
 .events-page .overlay .overlay-content {
   width: 90%;
   height: 80%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -689,9 +693,11 @@ form button {
   background-color: #1e1f26;
 }
 .events-page .overlay .overlay-content .close {
+  top: 0;
+  left: 0;
   position: absolute;
-  top: 11%;
-  left: 6%;
+  margin-top: 15px;
+  margin-left: 15px;
   color: white;
   cursor: pointer;
 }
@@ -714,8 +720,12 @@ form button {
 }
 .events-form .btn {
   background: none;
-  width: 300px;
   color: #c7c9d3;
+}
+@media (min-width: 768px) {
+  .events-form .btn {
+    width: 300px;
+  }
 }
 .events-form .btn:hover {
   color: #3d88c3;

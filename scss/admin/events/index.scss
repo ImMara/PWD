@@ -78,6 +78,7 @@
     .overlay-content {
       width: 90%;
       height: 80%;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -85,9 +86,11 @@
       background-color: $gray-dark-6;
 
       .close {
+        top: 0;
+        left: 0;
         position: absolute;
-        top: 11%;
-        left: 6%;
+        margin-top: 15px;
+        margin-left: 15px;
         color: white;
 
         cursor: pointer;

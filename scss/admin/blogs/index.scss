@@ -85,6 +85,7 @@
     .overlay-content {
       width: 90%;
       height: 80%;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -93,10 +94,11 @@
 
       .close {
         position: absolute;
-        top: 11%;
-        left: 6%;
+        top: 0;
+        left: 0;
+        margin-left: 15px;
+        margin-top: 15px;
         color: white;
-
         cursor: pointer;
 
         :hover {
