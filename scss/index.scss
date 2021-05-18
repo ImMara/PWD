@@ -30,6 +30,7 @@
 @import './404';
 
 // blog css
+
 @import 'admin/blogs/index';
 @import 'admin/blogs/create';
 @import 'admin/blogs/blog';
@@ -39,6 +40,10 @@
 @import 'admin/events/index';
 @import 'admin/events/create';
 @import 'admin/events/event';
+
+// site content
+
+@import 'admin/siteContents/index';
 
 // users css
 

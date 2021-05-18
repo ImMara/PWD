@@ -1,11 +1,30 @@
 .menu {
   width: 100%;
+  position: relative;
   font-weight: bold;
   height: 75px !important;
   background-color: $gray-dark-8;
   flex-shrink: 0;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.63);
-
+  &.open{
+    height: 300px !important;
+    ul{
+      margin-top: 75px;
+      background-color: $gray-dark-8;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
+      li{
+        display: initial;
+        &:first-child{
+          display: none;
+        }
+      }
+    }
+    .burger{
+      top: 6.3%;
+    }
+  }
   ul {
     max-width: 1280px;
     height: 100%;
@@ -55,9 +74,20 @@
         }
       }
     }
-
-    li:last-child {
-      display: initial;
+  }
+  .burger{
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 25%;
+    @media (min-width: $breakpoint-tablet) {
+      display: none;
+    }
+    a{
+      color: $gray-light-6;
+      &:hover{
+        color: $gray-light-3;
+      }
     }
   }
 }
