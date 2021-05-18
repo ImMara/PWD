@@ -1,30 +1,27 @@
-nav(class="menu")
-
-    ul(class="wrapper")
-        li
-            a
-                img(src="/images/logo.png")
-
-        if currentUser
-
+if currentUser
+    nav(class="menu")
+        ul(class="wrapper")
+            li
+                a
+                    img(src="/images/logo.png")
             li
                 a(href="/")
                     i(class="fa-duotone fa-home")
                     .
                         Home
-            li
-                a(href="/admin/blogs")
-                    i(class="fa-duotone fa-newspaper")
-                    .
-                        Blog
-            li
-                a(href="/admin/events")
-                    i(class="fa-duotone fa-calendar-days")
-                    .
-                        Events
+            if currentUser.role === 'ROLE_ADMIN' || currentUser.role ==='ROLE_SUPERADMIN'
+                li
+                    a(href="/admin/blogs")
+                        i(class="fa-duotone fa-newspaper")
+                        .
+                            Blog
+                li
+                    a(href="/admin/events")
+                        i(class="fa-duotone fa-calendar-days")
+                        .
+                            Events
 
-            if currentUser.role === 'ROLE_ADMIN'
-
+            if currentUser.role === 'ROLE_SUPERADMIN'
                 li
                     a(href="/admin/siteContents")
                         i(class="fa-duotone fa-browser")
@@ -35,11 +32,11 @@ nav(class="menu")
                         i(class="fa-duotone fa-clipboard-user")
                         .
                             Users
-                li
-                    a(class="btn" href="/admin/logout")
-                        i(class="fa-duotone fa-right-from-bracket")
-                        .
-                            logout
-    div(class="burger")
-        a
-            i(class="fa-duotone fa-2x fa-bars")
+            li
+                a(class="btn" href="/admin/logout")
+                    i(class="fa-duotone fa-right-from-bracket")
+                    .
+                        logout
+        div(class="burger")
+            a
+                i(class="fa-duotone fa-2x fa-bars")

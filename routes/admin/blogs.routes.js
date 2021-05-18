@@ -1,3 +1,4 @@
+const {roleAdmin} = require("../../config/guards.config");
 const {ensureAuthenticated} = require("../../config/guards.config");
 const router = require('express').Router();
 const {
@@ -12,21 +13,25 @@ const { uploadBlogs } = require('../../config/multer.config')
 // get routes
 router.get('/',
     ensureAuthenticated,
+    roleAdmin,
     getBlogs
 )
 router.get('/:id',
     ensureAuthenticated,
+    roleAdmin,
     getBlog
 )
 
 // post route
 router.post('/',
     ensureAuthenticated,
+    roleAdmin,
     uploadBlogs.single('image'),
     createBlogs
 )
 router.post('/update/:id',
     ensureAuthenticated,
+    roleAdmin,
     uploadBlogs.single('image'),
     updateBlogs
 )
@@ -34,6 +39,7 @@ router.post('/update/:id',
 // delete route
 router.delete('/:id',
     ensureAuthenticated,
+    roleAdmin,
     deleteBlogs
 )
 

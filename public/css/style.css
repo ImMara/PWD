@@ -72,7 +72,6 @@ form label {
 }
 form input:focus, form textarea:focus {
   border-top: 0;
-  outline: 1px solid #c7c9d3;
   -moz-outline-radius: 5px;
   border-left: 0;
   border-right: 0;
@@ -384,8 +383,9 @@ form button {
   align-items: center;
 }
 .home div {
-  width: 500px;
-  height: 600px;
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #c7c9d3;
 }
 .home div h1 {
   text-align: center;
