@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {ensureAuthenticated} = require('../config/guards.config');
 const admin = require('./admin.routes');
 const { googleAuth, googleAuthCb } = require('../controllers/auth.controller');
+const api = require('./api.routes');
 
 
 router.use('/admin', admin);
@@ -14,6 +15,8 @@ router.get('/', ((req, res) => {
     }
     res.render('home')
 }))
+
+router.use('/api', api)
 
 
 module.exports = router;
