@@ -3,9 +3,16 @@ window.onload = () => {
 }
 
 init = () => {
+    const container = document.querySelector('body')
 
     const select = document.querySelectorAll(".custom-select");
     const allInput = document.querySelector('.custom-select input');
+
+    const deleteOverlay = document.querySelector('.alert')
+    const overlayDeleteBtn = deleteOverlay.querySelectorAll('.alert-box .action .btn')
+    const message = deleteOverlay.querySelector('.alert-message span')
+
+    const deleteBtn = document.querySelectorAll('.users-page .table table tbody tr td:last-child .btn')
 
     const triggerEvent = (el, type) => {
         if ("createEvent" in document) {
@@ -50,5 +57,27 @@ init = () => {
                 .catch(error => console.error(error))
         };
 
+    })
+
+    deleteBtn.forEach( el => {
+        el.onclick = ($event) =>{
+            deleteOverlay.style.display= "block";
+            const name = $event.target.parentElement.parentElement.querySelector('td:first-child').innerText
+            const eventID = $event.target.parentElement.parentElement.getAttribute('id')
+
+            message.innerHTML=name;
+
+            overlayDeleteBtn[0].onclick = (e) =>{
+                deleteOverlay.style.display='none';
+            }
+            overlayDeleteBtn[1].onclick = (e) =>{
+                axios.delete('/admin/users/'+eventID)
+                    .then(res => {
+                        container.innerHTML= res.data;
+                        init();
+                    })
+                    .catch(error => console.log(error))
+            }
+        }
     })
 }

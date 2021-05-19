@@ -3,7 +3,7 @@ block content
     .user
         h1 welcome
             span  #{currentUser.username}
-        img(src="images/" + currentUser.image)
+        img(src="images/users/resized/" + currentUser.image)
         div
         case currentUser.role
             when "ROLE_ADMIN"

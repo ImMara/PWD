@@ -3,6 +3,18 @@ block content
     .users-page
         .topbar
             h1 User pannel
+        if success
+            ul(class="success-message")
+                li
+                    i(class="fad fa-8x fa-thumbs-up")
+                li=success
+        if errors
+            ul(class="error-message")
+                li
+                    i(class="fad fa-8x fa-exclamation-triangle")
+                each error in errors
+                    li=error
+        .events-container
         .table
             table
                 thead
@@ -31,5 +43,14 @@ block content
                                             span(data="ROLE_SUPERADMIN") ROLE_SUPERADMIN
                                 td
                                     .btn delete
+            .alert
+                .alert-box
+                    i(class="fa-duotone fa-3x fa-exclamation")
+                    p(class="title") Are you sure ?
+                    p(class="alert-message") You will not be able to recover
+                        span content !
+                    .action
+                        .btn cancel
+                        .btn yes , do it !
 block script
     script(src='/javascripts/users.js')

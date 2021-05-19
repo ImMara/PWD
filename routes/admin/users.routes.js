@@ -1,3 +1,4 @@
+const {deleteUser} = require("../../controllers/users.controller");
 const {roleSuperAdmin} = require("../../config/guards.config");
 const {ensureAuthenticated} = require("../../config/guards.config");
 const router = require('express').Router();
@@ -14,5 +15,11 @@ router.patch('/:id',
     updateRole
 )
 
+// delete route
+router.delete('/:id',
+    ensureAuthenticated,
+    roleSuperAdmin,
+    deleteUser
+)
 
 module.exports = router;

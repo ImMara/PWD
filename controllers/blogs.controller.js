@@ -88,7 +88,6 @@ exports.deleteBlogs = async (req, res, next) => {
 
     }
 
-
 }
 
 exports.getBlog = async (req, res, next) => {
