@@ -51,8 +51,10 @@ exports.createEvents = async (req, res, next) => {
 
         let errors;
         const events = await findAllEvents();
-        const {filename: image} = req.file;
-        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        if(req.file){
+            const {filename: image} = req.file;
+            fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        }
 
         if (e.code) {
             errors = ['duplicate key']
@@ -74,7 +76,9 @@ exports.deleteEvents = async (req, res, next) => {
         let name = event.name;
 
         const image = event.image;
-        fs.unlink(path.join(__dirname, `../public/images/events/resized/${image}`), (err => err && console.error(err)))
+        if(image!=='default.jpg'){
+            fs.unlink(path.join(__dirname, `../public/images/events/resized/${image}`), (err => err && console.error(err)))
+        }
 
         await deleteEvent(eventID);
 
@@ -117,7 +121,9 @@ exports.updateEvents = async (req, res, next) => {
 
             const event = await findEvents(eventID);
             const oldImage = event.image;
-            fs.unlink(path.join(__dirname, `../public/images/events/resized/${oldImage}`), (err => err && console.error(err)))
+            if(oldImage!=='default.jpg'){
+                fs.unlink(path.join(__dirname, `../public/images/events/resized/${oldImage}`), (err => err && console.error(err)))
+            }
             const upImage = req.file.filename;
             body.image = upImage;
 
@@ -153,8 +159,10 @@ exports.updateEvents = async (req, res, next) => {
         let errors;
         const event = await findEvents(eventID);
 
-        const {filename: image} = req.file;
-        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        if(req.file){
+            const {filename: image} = req.file;
+            fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        }
 
         if (e.code) {
             errors = ['duplicate key']

@@ -46,8 +46,10 @@ exports.createBlogs = async (req, res, next) => {
     } catch (e) {
 
         let errors;
-        const {filename: image} = req.file;
-        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        if(req.file){
+            const {filename: image} = req.file;
+            fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        }
 
         const blogs = await findAllBlogs().populate('author');
 
@@ -68,11 +70,12 @@ exports.deleteBlogs = async (req, res, next) => {
 
     try {
 
-
         let name = blog.title;
 
         const image = blog.image;
-        fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${image}`), (err => err && console.error(err)))
+        if(image!=='default.jpg'){
+            fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${image}`), (err => err && console.error(err)))
+        }
 
         await deleteBlog(blogID);
 
@@ -116,7 +119,9 @@ exports.updateBlogs = async (req, res, next) => {
 
             const blog = await findBlogs(blogID);
             const oldImage = blog.image;
-            fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${oldImage}`), (err => err && console.error(err)))
+            if(oldImage!=='default.jpg'){
+                fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${oldImage}`), (err => err && console.error(err)))
+            }
             const upImage = req.file.filename;
             body.image = upImage;
 
@@ -152,8 +157,10 @@ exports.updateBlogs = async (req, res, next) => {
         let errors;
         const blog = await findBlogs(blogID).populate('author');
 
-        const {filename: image} = req.file;
-        fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        if(req.file){
+            const {filename: image} = req.file;
+            fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
+        }
 
         if (e.code) {
             errors = ['duplicate key']

@@ -23,7 +23,7 @@ const blogSchema = schema({
         default: Date.now
     },
 
-    image: {type: String, default: "defaultBlog.jpg"},
+    image: {type: String, default: "default.jpg"},
 
     author: {type: schema.Types.ObjectId, ref: 'user', required: true, unique: false}
 
