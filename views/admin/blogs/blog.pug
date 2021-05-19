@@ -17,7 +17,8 @@ block content
                 input(type="text" value=`${blog.title}` name="title")
             label content
                 textarea(name="content")=blog.content
-            p="Author : " + blog.author.username
+            if blog.author
+                p="Author : " + blog.author.username
             p="Date : " + blog.created
             button(class="btn") save
 block script

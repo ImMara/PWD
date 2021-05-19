@@ -26,11 +26,12 @@ block content
                 .card(id=`${blog._id}`)
                     img(src="/images/blogs/resized/" + blog.image)
                     h2=blog.title
-                    h4="author : " + blog.author.username
+                    if blog.author
+                        h4="author : " + blog.author.username
                     .action
-                        if blog.author._id = currentUser._id
+                        if currentUser.role ==='ROLE_SUPERADMIN' || currentUser.role === 'ROLE_ADMIN'
                             .btn edit
-                        .btn delete
+                            .btn delete
         .overlay
             .overlay-content
                 .close
