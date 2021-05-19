@@ -26,6 +26,17 @@
       button {
         margin-top: 5px;
       }
+
+    }
+    .auth{
+      border: none;
+      padding: 0;
+      padding-top: 30px;
+      a{
+        svg{
+          margin-right: 0.3rem;
+        }
+      }
     }
   }
 }

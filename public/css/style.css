@@ -402,6 +402,14 @@ form button {
 .home div form button {
   margin-top: 5px;
 }
+.home div .auth {
+  border: none;
+  padding: 0;
+  padding-top: 30px;
+}
+.home div .auth a svg {
+  margin-right: 0.3rem;
+}
 
 .user {
   display: flex;
