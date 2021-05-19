@@ -136,6 +136,7 @@ exports.updateEvents = async (req, res, next) => {
 
             await updateEvent(eventID, body);
             const events = await findAllEvents();
+
             res.render('admin/events/index', {
                 events,
                 success: `successfully updated ${body.name}`,
