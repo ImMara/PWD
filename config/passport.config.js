@@ -1,6 +1,9 @@
 const {app} = require('../app');
 const passport = require('passport');
+const User = require("../database/models/user.model");
+const {findUserPerGoogleId} = require("../queries/users.queries");
 const localStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const {findUserPerEmail, findUserPerId} = require('../queries/users.queries')
 
 app.use(passport.initialize());
@@ -59,3 +62,29 @@ passport.use('local', new localStrategy({
 
     }
 }))
+
+passport.use('google', new GoogleStrategy({
+    clientID: '256667637100-qbqtpq07imdio8mbmbr4c53ngrflpp77.apps.googleusercontent.com',
+    clientSecret: 'Vm7ZmAll8j190rGAzCCj6JbC',
+    callbackURL: '/google/cb'
+}, async (accessToken, refreshToken, profile, done) => {
+    try {
+        const user = await findUserPerGoogleId(profile.id);
+        if (user) {
+            done(null, user);
+        } else {
+            const newUser = new User({
+                username: profile.displayName,
+                local: {
+                    googleId: profile.id,
+                    email: profile.emails[0].value
+                },
+                role: 'ROLE_USER'
+            })
+            const savedUser = await newUser.save();
+            done(null, savedUser);
+        }
+    } catch(e) {
+        done(e);
+    }
+}));

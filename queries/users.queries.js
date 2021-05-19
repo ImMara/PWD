@@ -45,3 +45,9 @@ exports.findAllUsers = () => {
     return User.find({}, '-local.password');
 
 }
+
+exports.findUserPerGoogleId = (googleId) => {
+
+    return User.findOne({ 'local.googleId': googleId }).exec();
+
+}

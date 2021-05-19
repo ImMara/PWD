@@ -25,6 +25,18 @@ exports.login = (req, res, next) => {
 
     })(req, res, next)
 }
+exports.googleAuth = (req, res, next) => {
+    passport.authenticate('google', {
+        scope: ['email', 'profile']
+    })(req, res, next);
+}
+
+exports.googleAuthCb = (req, res, next) => {
+    passport.authenticate('google', {
+        successRedirect: '/admin',
+        failureRedirect: '/'
+    })(req, res, next);
+}
 
 exports.logout = (req, res, next) => {
 
