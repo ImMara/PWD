@@ -19,15 +19,18 @@ block content
                             td=user.image
                             td=user.local.email
                             td
-                                .custom-select
-                                    select
-                                        option(value="" selected)
-                                    .selected=user.role
-                                        i(class="fa-duotone fa-chevron-down r-180-none")
-                                    .drop
-                                        span(data="ROLE_USER") ROLE_USER
-                                        span(data="ROLE_ADMIN") ROLE_ADMIN
-                                        span(data="ROLE_SUPERADMIN") ROLE_SUPERADMIN
+                                if(user.username !== currentUser.username)
+                                    .custom-select
+                                        select
+                                            option(value="" selected)
+                                        .selected=user.role
+                                            i(class="fa-duotone fa-chevron-down r-180-none")
+                                        .drop
+                                            span(data="ROLE_USER") ROLE_USER
+                                            span(data="ROLE_ADMIN") ROLE_ADMIN
+                                            span(data="ROLE_SUPERADMIN") ROLE_SUPERADMIN
+                                else
+                                    =user.role
                             td
                                 .btn delete
 block script
