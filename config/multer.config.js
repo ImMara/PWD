@@ -28,3 +28,16 @@ exports.uploadBlogs = multer({
 
     })
 })
+exports.uploadContents = multer({
+    storage: multer.diskStorage({
+
+        destination: (req, file, callback) => {
+            callback(null, path.join(__dirname, '../public/images/promo/'))
+        },
+
+        filename: (req, file, callback) => {
+            callback(null, `${Date.now()}-${file.originalname}`)
+        }
+
+    })
+})

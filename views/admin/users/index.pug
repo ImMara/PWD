@@ -14,12 +14,12 @@ block content
                         th Action
                 tbody
                     each user in users
-                        tr(id=user._id)
-                            td=user.username
-                            td=user.image
-                            td=user.local.email
-                            td
-                                if(user.username !== currentUser.username)
+                        if(user.username !== currentUser.username)
+                            tr(id=user._id)
+                                td=user.username
+                                td=user.image
+                                td=user.local.email
+                                td
                                     .custom-select
                                         select
                                             option(value="" selected)
@@ -29,9 +29,7 @@ block content
                                             span(data="ROLE_USER") ROLE_USER
                                             span(data="ROLE_ADMIN") ROLE_ADMIN
                                             span(data="ROLE_SUPERADMIN") ROLE_SUPERADMIN
-                                else
-                                    =user.role
-                            td
-                                .btn delete
+                                td
+                                    .btn delete
 block script
     script(src='/javascripts/users.js')

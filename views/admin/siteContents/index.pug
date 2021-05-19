@@ -16,7 +16,7 @@ block content
                     li=error
         .content-container
             each c in site
-                form(method="post" action="" enctype="")
+                form(method="post" action="/admin/siteContents/update/"+c._id enctype="multipart/form-data")
                     label site title :
                         input(type="text" value=c.title name="title")
                     label site description :
@@ -25,6 +25,8 @@ block content
                         input(type="text" value=c.promoTitle name="promoTitle")
                     label promo description :
                         input(type="text" value=c.promoDesc name="promoDesc")
+                    label promo image :
+                        input(type="file" name="image")
                     button(class="btn") save
 block script
     script(src="/javascripts/content.js")

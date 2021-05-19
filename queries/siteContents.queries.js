@@ -5,3 +5,7 @@ exports.findAllSiteContents = () => {
     return SiteContents.find();
 
 }
+
+exports.updateSiteContents = (ID , body) =>{
+    return SiteContents.findByIdAndUpdate(ID , {$set:body} , { runValidators:true})
+}
