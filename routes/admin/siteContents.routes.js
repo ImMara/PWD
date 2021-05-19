@@ -10,7 +10,7 @@ router.get('/', ensureAuthenticated,roleSuperAdmin, getContents)
 router.post('/update/:id',
         ensureAuthenticated,
         roleSuperAdmin,
-        uploadContents.single('promoImg'),
+        uploadContents.single('image'),
         updateContents
     )
 

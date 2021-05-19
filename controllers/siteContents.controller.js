@@ -1,6 +1,7 @@
 const path = require("path");
 const sharp = require('sharp');
 const fs = require('fs');
+const {findContents} = require("../queries/siteContents.queries");
 const {updateSiteContents} = require("../queries/siteContents.queries");
 const {findAllSiteContents} = require("../queries/siteContents.queries");
 
@@ -27,13 +28,12 @@ exports.updateContents = async (req,res,next) =>{
 
         if (req.file) {
 
-            const site = await findAllSiteContents();
-            const oldImage = site.image;
+            const content = await findContents(id);
+            const oldImage = content.image;
 
-            if(oldImage!=='default.jpg'){
-                fs.unlink(path.join(__dirname, `../public/images/promo/resized/${oldImage}`),
+            fs.unlink(path.join(__dirname, `../public/images/promo/resized/${oldImage}`),
                     (err => err && console.error(err)))
-            }
+
             const upImage = req.file.filename;
             body.image = upImage;
 
@@ -45,6 +45,8 @@ exports.updateContents = async (req,res,next) =>{
             fs.unlinkSync(req.file.path);
 
             await updateSiteContents(id,body);
+
+            const site = await findAllSiteContents();
             res.render('admin/siteContents/index', {
                 site,
                 success: `successfully updated`,

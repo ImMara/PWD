@@ -7,7 +7,7 @@ const siteContentSchema = schema({
     description:{type: String , required:true},
     promoTitle:{type:String , required:true},
     promoDesc:{type:String , required:true},
-    promoImg:{type:String, required:true}
+    image:{type:String, required:true}
 
 });
 
