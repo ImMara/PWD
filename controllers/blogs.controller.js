@@ -136,7 +136,7 @@ exports.updateBlogs = async (req, res, next) => {
             const blogs = await findAllBlogs().populate('author');
             res.render('admin/blogs/index', {
                 blogs,
-                success: `successfully updated ${body.name}`,
+                success: `successfully updated ${body.title}`,
                 currentUser: req.user
             });
 
