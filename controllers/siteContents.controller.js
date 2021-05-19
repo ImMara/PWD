@@ -78,7 +78,7 @@ exports.updateContents = async (req,res,next) =>{
             errors = Object.keys(e.errors).map(key => e.errors[key].message)
         }
 
-        res.status(400).render('admin/blogs/blog', {site, errors, currentUser: req.user})
+        res.status(400).render('admin/siteContents/index', {site, errors, currentUser: req.user})
 
     }
 }

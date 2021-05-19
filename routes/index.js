@@ -4,7 +4,7 @@ const admin = require('./admin.routes');
 const { googleAuth, googleAuthCb } = require('../controllers/auth.controller');
 const api = require('./api.routes');
 
-
+router.use('/api', api)
 router.use('/admin', admin);
 router.get('/google', googleAuth);
 router.get('/google/cb', googleAuthCb);
@@ -15,8 +15,5 @@ router.get('/', ((req, res) => {
     }
     res.render('home')
 }))
-
-router.use('/api', api)
-
 
 module.exports = router;
