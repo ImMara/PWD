@@ -51,7 +51,7 @@ exports.createEvents = async (req, res, next) => {
 
         let errors;
         const events = await findAllEvents();
-        if(req.file){
+        if (req.file) {
             const {filename: image} = req.file;
             fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
         }
@@ -76,7 +76,7 @@ exports.deleteEvents = async (req, res, next) => {
         let name = event.name;
 
         const image = event.image;
-        if(image!=='default.jpg'){
+        if (image !== 'default.jpg') {
             fs.unlink(path.join(__dirname, `../public/images/events/resized/${image}`), (err => err && console.error(err)))
         }
 
@@ -121,7 +121,7 @@ exports.updateEvents = async (req, res, next) => {
 
             const event = await findEvents(eventID);
             const oldImage = event.image;
-            if(oldImage!=='default.jpg'){
+            if (oldImage !== 'default.jpg') {
                 fs.unlink(path.join(__dirname, `../public/images/events/resized/${oldImage}`), (err => err && console.error(err)))
             }
             const upImage = req.file.filename;
@@ -160,7 +160,7 @@ exports.updateEvents = async (req, res, next) => {
         let errors;
         const event = await findEvents(eventID);
 
-        if(req.file){
+        if (req.file) {
             const {filename: image} = req.file;
             fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
         }

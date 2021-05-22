@@ -16,7 +16,7 @@ block content
                     li=error
         .content-container
             each c in site
-                form(method="post" action="/admin/siteContents/update/"+c._id enctype="multipart/form-data")
+                form(method="post" action="/admin/siteContents/update/" + c._id enctype="multipart/form-data")
                     label site title :
                         input(type="text" value=c.title name="title")
                     label site description :

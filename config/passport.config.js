@@ -84,7 +84,7 @@ passport.use('google', new GoogleStrategy({
             const savedUser = await newUser.save();
             done(null, savedUser);
         }
-    } catch(e) {
+    } catch (e) {
         done(e);
     }
 }));

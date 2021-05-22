@@ -4,49 +4,49 @@ const {findAllSiteContents} = require("../queries/siteContents.queries");
 const {findBlogs} = require("../queries/blogs.queries");
 const {findAllBlogs} = require("../queries/blogs.queries");
 
-exports.getContent = async ( req, res, next) =>{
-    try{
+exports.getContent = async (req, res, next) => {
+    try {
         const content = await findAllSiteContents();
         res.json({content})
-    }catch (e) {
+    } catch (e) {
         next(e)
     }
 }
 
-exports.getBlogs = async ( req, res, next) =>{
-    try{
+exports.getBlogs = async (req, res, next) => {
+    try {
         const blogs = await findAllBlogs().populate('author')
         res.json({blogs})
-    }catch (e) {
+    } catch (e) {
         next(e)
     }
 }
 
-exports.getBlog = async (req, res, next) =>{
+exports.getBlog = async (req, res, next) => {
     const blogID = req.params.id;
-    try{
+    try {
         const blog = await findBlogs(blogID).populate('author')
         res.json({blog})
-    }catch (e) {
+    } catch (e) {
         next(e)
     }
 }
 
-exports.getEvents = async (req, res, next) =>{
-    try{
+exports.getEvents = async (req, res, next) => {
+    try {
         const events = await findAllEvents();
         res.json({events})
-    }catch (e) {
+    } catch (e) {
         next(e)
     }
 }
 
-exports.getEvent = async (req,res,next) =>{
+exports.getEvent = async (req, res, next) => {
     const eventID = req.params.id;
-    try{
+    try {
         const event = await findEvents(eventID)
         res.json({event})
-    }catch (e){
+    } catch (e) {
         next(e)
     }
 }

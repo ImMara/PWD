@@ -19,26 +19,30 @@
         height: 300px;
       }
     }
-    .img-container{
+
+    .img-container {
       position: relative;
       display: flex;
       margin-bottom: 15px;
       justify-content: center;
       align-items: center;
       background-color: $gray-light-1;
+
       img {
         height: 200px;
         cursor: pointer;
         width: 100%;
         object-fit: contain;
       }
-      .button{
+
+      .button {
         position: absolute;
         top: 80%;
         left: 1%;
         cursor: pointer;
         color: $gray-light-6;
-        &:hover{
+
+        &:hover {
           color: $gray-light-3;
         }
       }

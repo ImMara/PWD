@@ -18,11 +18,11 @@ exports.getContents = async (req, res, next) => {
 
     }
 }
-exports.updateContents = async (req,res,next) =>{
+exports.updateContents = async (req, res, next) => {
 
     const id = req.params.id;
 
-    try{
+    try {
 
         const body = req.body;
 
@@ -32,7 +32,7 @@ exports.updateContents = async (req,res,next) =>{
             const oldImage = content.image;
 
             fs.unlink(path.join(__dirname, `../public/images/promo/resized/${oldImage}`),
-                    (err => err && console.error(err)))
+                (err => err && console.error(err)))
 
             const upImage = req.file.filename;
             body.image = upImage;
@@ -44,7 +44,7 @@ exports.updateContents = async (req,res,next) =>{
                 .toFile(path.resolve(req.file.destination, "resized", image))
             fs.unlinkSync(req.file.path);
 
-            await updateSiteContents(id,body);
+            await updateSiteContents(id, body);
 
             const site = await findAllSiteContents();
             res.render('admin/siteContents/index', {
@@ -55,7 +55,7 @@ exports.updateContents = async (req,res,next) =>{
 
         } else {
 
-            await updateSiteContents(id,body);
+            await updateSiteContents(id, body);
             const site = await findAllSiteContents();
             res.render('admin/siteContents/index', {
                 site,
@@ -64,12 +64,12 @@ exports.updateContents = async (req,res,next) =>{
             });
 
         }
-    }catch (e) {
+    } catch (e) {
 
         let errors;
         const site = await findAllSiteContents();
 
-        if(req.file){
+        if (req.file) {
             const {filename: image} = req.file;
             fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
         }

@@ -21,7 +21,8 @@ exports.createUser = async (user) => {
 
     }
 }
-exports.findUser = (id) =>{
+
+exports.findUser = (id) => {
     return User.findById(id)
 }
 
@@ -51,11 +52,11 @@ exports.findAllUsers = () => {
 
 exports.findUserPerGoogleId = (googleId) => {
 
-    return User.findOne({ 'local.googleId': googleId }).exec();
+    return User.findOne({'local.googleId': googleId}).exec();
 
 }
 
-exports.deleteUsers = (id) =>{
+exports.deleteUsers = (id) => {
 
     return User.findByIdAndDelete(id).exec();
 

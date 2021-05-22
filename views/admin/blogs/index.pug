@@ -29,7 +29,7 @@ block content
                     if blog.author
                         h4="author : " + blog.author.username
                     .action
-                        if currentUser.role ==='ROLE_SUPERADMIN' || currentUser.role === 'ROLE_ADMIN'
+                        if currentUser.role === 'ROLE_SUPERADMIN' || currentUser.role === 'ROLE_ADMIN'
                             .btn edit
                             .btn delete
         .overlay

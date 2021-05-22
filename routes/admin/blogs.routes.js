@@ -8,7 +8,7 @@ const {
     updateBlogs,
     deleteBlogs
 } = require('../../controllers/blogs.controller');
-const { uploadBlogs } = require('../../config/multer.config')
+const {uploadBlogs} = require('../../config/multer.config')
 
 // get routes
 router.get('/',

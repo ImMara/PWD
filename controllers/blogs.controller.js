@@ -46,7 +46,7 @@ exports.createBlogs = async (req, res, next) => {
     } catch (e) {
 
         let errors;
-        if(req.file){
+        if (req.file) {
             const {filename: image} = req.file;
             fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
         }
@@ -73,7 +73,7 @@ exports.deleteBlogs = async (req, res, next) => {
         let name = blog.title;
 
         const image = blog.image;
-        if(image!=='default.jpg'){
+        if (image !== 'default.jpg') {
             fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${image}`), (err => err && console.error(err)))
         }
 
@@ -118,7 +118,7 @@ exports.updateBlogs = async (req, res, next) => {
 
             const blog = await findBlogs(blogID);
             const oldImage = blog.image;
-            if(oldImage!=='default.jpg'){
+            if (oldImage !== 'default.jpg') {
                 fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${oldImage}`), (err => err && console.error(err)))
             }
             const upImage = req.file.filename;
@@ -156,7 +156,7 @@ exports.updateBlogs = async (req, res, next) => {
         let errors;
         const blog = await findBlogs(blogID).populate('author');
 
-        if(req.file){
+        if (req.file) {
             const {filename: image} = req.file;
             fs.unlinkSync(path.resolve(req.file.destination, "resized", image))
         }

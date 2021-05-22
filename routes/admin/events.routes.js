@@ -1,5 +1,5 @@
-const {updateEvents,createEvents,deleteEvents,getEvent} = require("../../controllers/events.controller");
-const {ensureAuthenticated , roleAdmin} = require("../../config/guards.config");
+const {updateEvents, createEvents, deleteEvents, getEvent} = require("../../controllers/events.controller");
+const {ensureAuthenticated, roleAdmin} = require("../../config/guards.config");
 const {uploadEvents} = require("../../config/multer.config");
 const router = require('express').Router();
 const {getEvents} = require('../../controllers/events.controller');

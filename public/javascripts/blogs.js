@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded',()=>{
+window.addEventListener('DOMContentLoaded', () => {
     init()
 })
 
@@ -24,28 +24,28 @@ const init = () => {
     }
 
     deleteBtn.forEach(el => {
-        el.onclick = ($event) =>{
-            deleteOverlay.style.display= "block";
+        el.onclick = ($event) => {
+            deleteOverlay.style.display = "block";
             const blogID = $event.target.parentElement.parentElement.getAttribute('id')
             const name = $event.target.parentElement.parentElement.querySelector('h2').innerText
 
-            message.innerHTML=name;
+            message.innerHTML = name;
 
-            overlayDeleteBtn[0].onclick = (e) =>{
-                deleteOverlay.style.display='none';
+            overlayDeleteBtn[0].onclick = (e) => {
+                deleteOverlay.style.display = 'none';
             }
-            overlayDeleteBtn[1].onclick = (e) =>{
+            overlayDeleteBtn[1].onclick = (e) => {
                 axios.delete('/admin/blogs/' + blogID)
-                         .then(res => {
-                            container.innerHTML = res.data;
-                            init();
-                         })
-                         .catch(error => console.log(error));
+                    .then(res => {
+                        container.innerHTML = res.data;
+                        init();
+                    })
+                    .catch(error => console.log(error));
             }
         }
     })
 
-    editBtn.forEach(el =>{
+    editBtn.forEach(el => {
         el.onclick = ($event) => {
             const blogID = $event.target.parentElement.parentElement.getAttribute('id')
             window.location.replace(`/admin/blogs/${blogID}`)

@@ -970,5 +970,22 @@ form button {
     transform: rotate(0deg);
   }
 }
+.account-page {
+  margin-top: 30px;
+}
+.account-page .topbar {
+  padding-bottom: 30px;
+}
+.account-page .topbar h1 {
+  text-align: center;
+}
+.account-page .account-content form {
+  display: flex;
+  flex-direction: column;
+}
+.account-page .account-content form label {
+  display: flex;
+  flex-direction: column;
+}
 
 /*# sourceMappingURL=style.css.map */

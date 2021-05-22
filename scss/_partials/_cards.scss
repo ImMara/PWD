@@ -48,7 +48,7 @@
     text-overflow: ellipsis;
   }
 
-  .action{
+  .action {
     display: flex;
 
     .btn {
@@ -60,7 +60,8 @@
         background-color: $gray-dark-8;
         color: $gray-light-6;
         border-color: $gray-dark-8;
-        &:hover{
+
+        &:hover {
           background-color: $gray-light-6;
           color: $gray-dark-8;
         }
@@ -70,7 +71,7 @@
         width: 50%;
         @include btn-red;
 
-        }
       }
+    }
   }
 }

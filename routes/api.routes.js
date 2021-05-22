@@ -2,7 +2,7 @@ const {getEvent} = require("../controllers/api.controller");
 const {getEvents} = require("../controllers/api.controller");
 const {getContent} = require("../controllers/api.controller");
 const router = require('express').Router();
-const { getBlogs , getBlog} = require('../controllers/api.controller')
+const {getBlogs, getBlog} = require('../controllers/api.controller')
 
 router.get('/blogs',
     getBlogs

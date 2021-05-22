@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded" , () =>{
+window.addEventListener("DOMContentLoaded", () => {
     init()
 })
 
@@ -25,21 +25,21 @@ const init = () => {
         overlay.style.display = "none"
     }
 
-    deleteBtn.forEach( el => {
-        el.onclick = ($event) =>{
-            deleteOverlay.style.display= "block";
+    deleteBtn.forEach(el => {
+        el.onclick = ($event) => {
+            deleteOverlay.style.display = "block";
             const name = $event.target.parentElement.parentElement.querySelector('h2').innerText
             const eventID = $event.target.parentElement.parentElement.getAttribute('id')
 
-            message.innerHTML=name;
+            message.innerHTML = name;
 
-            overlayDeleteBtn[0].onclick = (e) =>{
-                deleteOverlay.style.display='none';
+            overlayDeleteBtn[0].onclick = (e) => {
+                deleteOverlay.style.display = 'none';
             }
-            overlayDeleteBtn[1].onclick = (e) =>{
-                axios.delete('/admin/events/'+eventID)
+            overlayDeleteBtn[1].onclick = (e) => {
+                axios.delete('/admin/events/' + eventID)
                     .then(res => {
-                        container.innerHTML= res.data;
+                        container.innerHTML = res.data;
                         init();
                     })
                     .catch(error => console.log(error))
@@ -47,8 +47,8 @@ const init = () => {
         }
     })
 
-    editBtn.forEach(el =>{
-        el.onclick = ($event) =>{
+    editBtn.forEach(el => {
+        el.onclick = ($event) => {
             const eventID = $event.target.parentElement.parentElement.getAttribute("id");
             window.location.replace(`/admin/events/${eventID}`);
         }

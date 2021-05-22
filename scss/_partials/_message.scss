@@ -1,20 +1,22 @@
-.success-message{
+.success-message {
   position: relative;
   min-height: 120px;
   padding: 30px;
   background-color: $green-light;
   border-radius: 5px;
-  border:1px solid $gray-light-3;
+  border: 1px solid $gray-light-3;
   color: $gray-dark-8;
   margin-top: 15px;
-    li{
-      margin-left: 15px;
-      padding: 5px;
-      &:first-child{
-        opacity: 0.1;
-        position: absolute;
-        top: -8.5%;
-        left: -1.5%;
-      }
+
+  li {
+    margin-left: 15px;
+    padding: 5px;
+
+    &:first-child {
+      opacity: 0.1;
+      position: absolute;
+      top: -8.5%;
+      left: -1.5%;
     }
+  }
 }

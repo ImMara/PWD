@@ -6,10 +6,10 @@ exports.findAllSiteContents = () => {
 
 }
 
-exports.updateSiteContents = (ID , body) =>{
-    return SiteContents.findByIdAndUpdate(ID , {$set:body} , { runValidators:true})
+exports.updateSiteContents = (ID, body) => {
+    return SiteContents.findByIdAndUpdate(ID, {$set: body}, {runValidators: true})
 }
 
-exports.findContents = (id) =>{
+exports.findContents = (id) => {
     return SiteContents.findById(id)
 }

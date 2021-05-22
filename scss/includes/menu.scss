@@ -6,26 +6,32 @@
   background-color: $gray-dark-8;
   flex-shrink: 0;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.63);
-  &.open{
+
+  &.open {
     height: 300px !important;
-    ul{
+
+    ul {
       margin-top: 75px;
       background-color: $gray-dark-8;
       flex-direction: column;
 
       justify-content: space-around;
       align-items: flex-end;
-      li{
+
+      li {
         display: initial;
-        &:first-child{
+
+        &:first-child {
           display: none;
         }
       }
     }
-    .burger{
+
+    .burger {
       top: 6.3%;
     }
   }
+
   ul {
     max-width: 1280px;
     height: 100%;
@@ -76,7 +82,8 @@
       }
     }
   }
-  .burger{
+
+  .burger {
     position: absolute;
     cursor: pointer;
     right: 5%;
@@ -84,9 +91,11 @@
     @media (min-width: $breakpoint-tablet) {
       display: none;
     }
-    a{
+
+    a {
       color: $gray-light-6;
-      &:hover{
+
+      &:hover {
         color: $gray-light-3;
       }
     }

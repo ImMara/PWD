@@ -11,7 +11,7 @@ const userSchema = schema({
     local: {
         email: {type: String, required: true, unique: true},
         password: {type: String},
-        googleId:{type:String}
+        googleId: {type: String}
     },
     role: {type: String, default: "ROLE_USER"}
 

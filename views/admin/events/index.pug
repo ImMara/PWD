@@ -24,7 +24,7 @@ block content
                 .card(id=`${ev._id}`)
                     img(src="/images/events/resized/" + ev.image)
                     h2=ev.name
-                    p=ev.date.toISOString().substr(0,10)
+                    p=ev.date.toISOString().substr(0, 10)
                     p="address : " + ev.address
                     .action
                         .btn edit
@@ -44,4 +44,4 @@ block content
                     .btn cancel
                     .btn yes , do it !
 block script
-   script(src="/javascripts/events.js")
+    script(src="/javascripts/events.js")

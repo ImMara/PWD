@@ -7,8 +7,8 @@ const blogSchema = schema({
         type: String,
         required: true,
         unique: true,
-        minLength: [3,'title is to short'],
-        maxLength:[100,'title is to long'],
+        minLength: [3, 'title is to short'],
+        maxLength: [100, 'title is to long'],
     },
 
     content: {

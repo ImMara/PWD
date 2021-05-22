@@ -18,28 +18,28 @@ exports.getUsers = async (req, res, next) => {
     }
 }
 
-exports.updateRole = async (req, res , next) =>{
+exports.updateRole = async (req, res, next) => {
     const userID = req.params.id;
-    try{
+    try {
 
         const body = req.body;
-        await findUserAndUpdate(userID,body,{runValidators:true})
+        await findUserAndUpdate(userID, body, {runValidators: true})
         res.end()
 
-    }catch (e) {
+    } catch (e) {
 
         next(e)
 
     }
 }
 
-exports.deleteUser = async (req,res,next) =>{
+exports.deleteUser = async (req, res, next) => {
     const userID = req.params.id;
     const user = await findUser(userID);
-    try{
+    try {
         let name = user.username;
         const image = user.image;
-        if(image !== 'default.png'){
+        if (image !== 'default.png') {
             fs.unlink(path.join(__dirname, `../public/images/users/resized/${image}`), (err => err && console.error(err)))
         }
         await deleteUsers(userID);
@@ -47,7 +47,7 @@ exports.deleteUser = async (req,res,next) =>{
         const users = await findAllUsers();
         res.render('admin/users/index', {users, success: `successfully deleted ${name}`, currentUser: req.user})
 
-    }catch (e) {
+    } catch (e) {
         next(e)
     }
 }

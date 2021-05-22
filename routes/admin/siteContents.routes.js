@@ -5,13 +5,13 @@ const {ensureAuthenticated} = require("../../config/guards.config");
 const router = require('express').Router();
 const {getContents} = require('../../controllers/siteContents.controller');
 
-router.get('/', ensureAuthenticated,roleSuperAdmin, getContents)
+router.get('/', ensureAuthenticated, roleSuperAdmin, getContents)
 
 router.post('/update/:id',
-        ensureAuthenticated,
-        roleSuperAdmin,
-        uploadContents.single('image'),
-        updateContents
-    )
+    ensureAuthenticated,
+    roleSuperAdmin,
+    uploadContents.single('image'),
+    updateContents
+)
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {ensureAuthenticated} = require('../config/guards.config');
 const admin = require('./admin.routes');
-const { googleAuth, googleAuthCb } = require('../controllers/auth.controller');
+const {googleAuth, googleAuthCb} = require('../controllers/auth.controller');
 const api = require('./api.routes');
 
 router.use('/api', api)

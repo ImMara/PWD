@@ -7,15 +7,16 @@
   label {
     display: flex;
     flex-direction: column;
-    input{
-      color:$gray-light-6;
+
+    input {
+      color: $gray-light-6;
     }
   }
 
   .btn {
     background: none;
     color: $gray-light-3;
-    @media (min-width: $breakpoint-tablet){
+    @media (min-width: $breakpoint-tablet) {
       width: 300px;
     }
 
