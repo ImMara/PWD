@@ -118,6 +118,7 @@ exports.updateBlogs = async (req, res, next) => {
 
             const blog = await findBlogs(blogID);
             const oldImage = blog.image;
+
             if (oldImage !== 'default.jpg') {
                 fs.unlink(path.join(__dirname, `../public/images/blogs/resized/${oldImage}`), (err => err && console.error(err)))
             }

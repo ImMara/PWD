@@ -1,4 +1,4 @@
-const {app} = require('../app');
+const app = require('../app');
 const passport = require('passport');
 const User = require("../database/models/user.model");
 const {findUserPerGoogleId} = require("../queries/users.queries");

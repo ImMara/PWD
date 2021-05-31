@@ -3,9 +3,10 @@ require('dotenv').config()
 const morgan = require('morgan');
 const path = require('path');
 require('./database');
+
 const app = express();
-exports.app = app;
-const port = process.env.PORT || 3001;
+module.exports = app;
+
 const index = require('./routes');
 const errorHandler = require('errorhandler');
 
@@ -32,5 +33,3 @@ if (process.env.NODE_ENV === 'development') {
         });
     })
 }
-
-app.listen(port);
