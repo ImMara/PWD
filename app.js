@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'development') {
         });
     })
 }
-http.createServer(app).listen(3001)
+http.createServer(app).listen()
 // https.createServer({
 //     key:fs.readFileSync(env.key),
 //     cert:fs.readFileSync(env.cert)
