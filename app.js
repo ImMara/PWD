@@ -12,7 +12,7 @@ const errorHandler = require('errorhandler');
 require('./database');
 
 const app = express();
-module.exports = app;
+exports.app = app;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -38,6 +38,9 @@ if (process.env.NODE_ENV === 'development') {
         });
     })
 }
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`))
+
 // http.createServer(app).listen(80)
 // https.createServer({
 //     key:fs.readFileSync(env.key),
