@@ -12,7 +12,7 @@ const errorHandler = require('errorhandler');
 require('./database');
 
 const app = express();
-exports.app = app;
+module.exports = app;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -38,8 +38,8 @@ if (process.env.NODE_ENV === 'development') {
         });
     })
 }
-http.createServer(app).listen()
+// http.createServer(app).listen(80)
 // https.createServer({
 //     key:fs.readFileSync(env.key),
 //     cert:fs.readFileSync(env.cert)
-// },app).listen(443)
+// },app).listen(3443)
