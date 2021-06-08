@@ -17,7 +17,9 @@ const eventSchema = schema({
 
     address: {type: String, minLength: [5, 'adress is way shorter then usual!']},
 
-    image: {type: String, default: 'default.jpg'}
+    image: {type: String, default: 'default.jpg'},
+
+    link:{type: String , required: true}
 
 });
 

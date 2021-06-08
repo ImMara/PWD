@@ -21,6 +21,8 @@ block content
                 input(type="date" value=`${event.endDate.toISOString().substring(0, 10)}` name="endDate")
             label address
                 input(type="text" value=event.address name="address")
+            label link
+                input(type="text" value=event.link name="link")
             button(class="btn") valider
 
 block script
