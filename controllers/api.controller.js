@@ -1,17 +1,9 @@
 const {findEvents} = require("../queries/events.queries");
 const {findAllEvents} = require("../queries/events.queries");
-const {findAllSiteContents} = require("../queries/siteContents.queries");
 const {findBlogs} = require("../queries/blogs.queries");
 const {findAllBlogs} = require("../queries/blogs.queries");
 
-exports.getContent = async (req, res, next) => {
-    try {
-        const content = await findAllSiteContents();
-        res.json({content})
-    } catch (e) {
-        next(e)
-    }
-}
+// CAPI-#001
 
 exports.getBlogs = async (req, res, next) => {
     try {
@@ -21,6 +13,8 @@ exports.getBlogs = async (req, res, next) => {
         next(e)
     }
 }
+
+// CAPI-#002
 
 exports.getBlog = async (req, res, next) => {
     const blogID = req.params.id;
@@ -32,6 +26,8 @@ exports.getBlog = async (req, res, next) => {
     }
 }
 
+// CAPI-#003
+
 exports.getEvents = async (req, res, next) => {
     try {
         const events = await findAllEvents();
@@ -41,6 +37,7 @@ exports.getEvents = async (req, res, next) => {
     }
 }
 
+// CAPI-#004
 exports.getEvent = async (req, res, next) => {
     const eventID = req.params.id;
     try {

@@ -3,6 +3,8 @@ const path = require("path");
 const sharp = require("sharp");
 const {updateEvent, deleteEvent, findEvents, createEvent, findAllEvents} = require("../queries/events.queries");
 
+// CEVENTS-#001
+
 exports.getEvents = async (req, res, next) => {
     try {
 
@@ -15,6 +17,8 @@ exports.getEvents = async (req, res, next) => {
 
     }
 }
+
+// CEVENTS-#002
 
 exports.createEvents = async (req, res, next) => {
     try {
@@ -66,6 +70,8 @@ exports.createEvents = async (req, res, next) => {
     }
 }
 
+// CEVENTS-#003
+
 exports.deleteEvents = async (req, res, next) => {
 
     const eventID = req.params.id;
@@ -93,6 +99,8 @@ exports.deleteEvents = async (req, res, next) => {
 
 }
 
+// CEVENTS-#004
+
 exports.getEvent = async (req, res, next) => {
 
     const eventID = req.params.id;
@@ -108,6 +116,8 @@ exports.getEvent = async (req, res, next) => {
 
     }
 }
+
+// CEVENTS-#005
 
 exports.updateEvents = async (req, res, next) => {
 

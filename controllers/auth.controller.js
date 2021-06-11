@@ -1,5 +1,7 @@
 const passport = require('passport')
 
+// CAUTH-#001
+
 exports.login = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
 
@@ -25,12 +27,14 @@ exports.login = (req, res, next) => {
 
     })(req, res, next)
 }
+// CAUTH-#002
 exports.googleAuth = (req, res, next) => {
     passport.authenticate('google', {
         scope: ['email', 'profile']
     })(req, res, next);
 }
 
+// CAUTH-#003
 exports.googleAuthCb = (req, res, next) => {
     passport.authenticate('google', {
         successRedirect: '/admin',
@@ -38,6 +42,7 @@ exports.googleAuthCb = (req, res, next) => {
     })(req, res, next);
 }
 
+// CAUTH-#004
 exports.logout = (req, res, next) => {
 
     req.logout();

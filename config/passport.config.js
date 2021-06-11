@@ -9,11 +9,17 @@ const {findUserPerEmail, findUserPerId} = require('../queries/users.queries')
 app.use(passport.initialize());
 app.use(passport.session());
 
+// NUM SESSION
+// PASSPORT-#001
+
 passport.serializeUser((user, done) => {
 
     done(null, user._id);
 
 });
+
+// NUM SESSION
+// PASSPORT-#002
 
 passport.deserializeUser(async (id, done) => {
     try {

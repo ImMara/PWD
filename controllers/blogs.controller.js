@@ -3,6 +3,8 @@ const path = require("path");
 const sharp = require('sharp');
 const fs = require('fs');
 
+// CBLOG-#001
+
 exports.getBlogs = async (req, res, next) => {
     try {
 
@@ -15,6 +17,8 @@ exports.getBlogs = async (req, res, next) => {
 
     }
 }
+
+// CBLOG-#002
 
 exports.createBlogs = async (req, res, next) => {
     try {
@@ -63,6 +67,8 @@ exports.createBlogs = async (req, res, next) => {
     }
 }
 
+// CBLOG-#003
+
 exports.deleteBlogs = async (req, res, next) => {
 
     const blogID = req.params.id;
@@ -90,6 +96,8 @@ exports.deleteBlogs = async (req, res, next) => {
 
 }
 
+// CBLOG-#004
+
 exports.getBlog = async (req, res, next) => {
 
     const blogID = req.params.id;
@@ -105,6 +113,8 @@ exports.getBlog = async (req, res, next) => {
 
     }
 }
+
+// CBLOG-#005
 
 exports.updateBlogs = async (req, res, next) => {
 
