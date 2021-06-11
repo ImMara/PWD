@@ -16,6 +16,14 @@ const init = () => {
 
     const editBtn = document.querySelectorAll('.events-container .action .btn:first-child');
 
+    const date = document.querySelector('.date')
+    const endDate = document.querySelector('.endDate')
+
+    date.addEventListener('change',(e)=>{
+        const value = e.target.value
+        endDate.setAttribute('min',value)
+    })
+
     createBtn.onclick = () => {
         tween.play();
         overlay.style.display = "flex"
