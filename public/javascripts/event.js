@@ -9,7 +9,6 @@ init = () => {
     const endDate = document.querySelector('.endDate')
 
     date.addEventListener('change',(e)=>{
-
         const value = e.target.value
         endDate.setAttribute('min',value)
     })
