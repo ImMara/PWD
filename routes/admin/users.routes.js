@@ -9,7 +9,7 @@ router.get('/',
     roleSuperAdmin,
     getUsers
 )
-router.patch('/:id',
+router.put('/:id',
     ensureAuthenticated,
     roleSuperAdmin,
     updateRole

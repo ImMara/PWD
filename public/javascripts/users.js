@@ -53,7 +53,7 @@ init = () => {
             const value = e.target.value
             const userID = s.parentElement.parentElement.getAttribute('id')
 
-            axios.patch('/admin/users/' + userID, {role: value})
+            axios.put('/admin/users/' + userID, {role: value})
                 .catch(error => console.error(error))
         };
 
