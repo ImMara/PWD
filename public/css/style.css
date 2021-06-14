@@ -692,7 +692,7 @@ form button {
 }
 .events-page .overlay .overlay-content {
   width: 90%;
-  height: 80%;
+  height: 90%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -789,35 +789,6 @@ form button {
 .event-page form p {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-.content-page .topbar {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  flex-wrap: wrap;
-}
-.content-page h1 {
-  width: 100%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-.content-page .content-container {
-  display: flex;
-  margin-top: 30px;
-  justify-content: center;
-  width: 100%;
-}
-.content-page .content-container form {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-}
-.content-page .content-container form label {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .users-page .topbar {
