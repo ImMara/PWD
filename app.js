@@ -66,7 +66,7 @@ if (process.env.NODE_ENV === 'development') {
 // APPJS-#09
 // CREATE SERVER
 
-http.createServer(app).listen(3001)
+http.createServer(app).listen(80)
 
 // http.createServer((req, res) => {
 //   res.writeHead('301', { Location: `https://${ req.headers.host }${ req.url }` })
